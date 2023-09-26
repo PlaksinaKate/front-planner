@@ -1,8 +1,10 @@
-# React + Vite
+# Планировщик событий
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## [ТЗ](https://docs.google.com/document/d/1ruy6jl98JbscRjAzKhGwS4HKMbCbd_8rX4NYQ4nDYTA/edit)
 
-Currently, two official plugins are available:
+## [Backend для локального развёртывания](https://gitlab.rdclr.ru/rc-foundation/frontend/planner)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## [Скрипты для http клиента c запросами](https://gitlab.rdclr.ru/rc-foundation/frontend/planner/-/blob/main/http/planner.http)
+
+## [Макет](https://www.figma.com/file/Ywwm3fZCeqGs6tE07Tr3Kk/Планировщик-ивентов)
+
