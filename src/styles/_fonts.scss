@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'TTCommons';
+  src: local('TTCommons Regular'), local('TTCommons-Regular'),
+      url('../fonts/TTCommons/TTCommons-Regular.woff2') format('woff2'),
+      url('../fonts/TTCommons/TTCommons-Regular.woff') format('woff'),
+      url('../fonts/TTCommons/TTCommons-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTCommons';
+  src: local('TTCommons Medium'), local('TTCommons-Medium'),
+      url('../fonts/TTCommons/TTCommons-Medium.woff2') format('woff2'),
+      url('../fonts/TTCommons/TTCommons-Medium.woff') format('woff'),
+      url('../fonts/TTCommons/TTCommons-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
