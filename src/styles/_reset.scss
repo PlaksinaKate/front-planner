@@ -3,8 +3,8 @@ body {
   margin: 0;
   padding: 0;
   max-width: 100%;
-  background: $dark;
-  color: $white;
+  background: $white;
+  color: $black;
   font-size: $fs+px;
   font-style: normal;
   font-weight: normal;
@@ -77,8 +77,8 @@ script {
 }
 
 ::selection {
-  color: $white;
-  background: transparentize($purple, 0.35);
+  color: $black;
+  background: transparentize($red, 0.35);
 }
 
 *,
@@ -92,7 +92,7 @@ section {
   margin: 0;
 }
 
-ul{
+ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -100,7 +100,7 @@ ul{
 
 // titles
 h1,
-.h1{
+.h1 {
   font-size: 4.5rem;
   font-weight: 500;
   line-height: 1.125;
@@ -109,7 +109,7 @@ h1,
 }
 
 h2,
-.h2{
+.h2 {
   font-size: 3.75rem;
   font-weight: 500;
   line-height: 1.12;
@@ -118,7 +118,7 @@ h2,
 }
 
 h3,
-.h3{
+.h3 {
   font-size: 3rem;
   font-weight: 500;
   line-height: 1.125;
@@ -127,7 +127,7 @@ h3,
 }
 
 h4,
-.h4{
+.h4 {
   font-size: 1.75rem;
   font-weight: 500;
   line-height: 1.214;
@@ -136,7 +136,7 @@ h4,
 }
 
 h5,
-.h5{
+.h5 {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.28;

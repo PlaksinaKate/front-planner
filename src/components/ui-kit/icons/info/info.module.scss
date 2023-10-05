@@ -1,0 +1,18 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.info {
+  cursor: pointer;
+
+  path {
+    transition: fill $as $ae;
+  }
+
+  &:hover path {
+    fill: $red
+  }
+}
+
+.small {
+  transform: scale(.75);
+}

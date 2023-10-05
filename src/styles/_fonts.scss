@@ -17,3 +17,11 @@
   font-weight: 500;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Redcollar';
+  src: local('Redcollar'), local('Redcollar'),
+      url('../fonts/RedCollar/Redcollar.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}

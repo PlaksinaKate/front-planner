@@ -1,0 +1,53 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.event {
+  padding: .125rem .375rem;
+  background-color: $white;
+  color: $gray;
+  font-family: $ff2;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.40;
+  letter-spacing: -0.4px;
+  position: relative;
+  border-radius: 8px;
+  width: max-content;
+
+  &.future {
+    color: $black;
+  }
+
+  &.accede {
+    padding: .125rem .375rem .125rem 1.125rem;
+    color: $black;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 6px;
+      width: 8px;
+      height: 8px;
+      background-color: $red;
+      border-radius: 4px;
+    }
+  }
+
+  &.created {
+    padding: .125rem .375rem .125rem 1.625rem;
+    background-color: $red;
+    color: $white;
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 6px;
+      width: 16px;
+      height: 16px;
+      background: url('star.svg') no-repeat center;
+    }
+  }
+}

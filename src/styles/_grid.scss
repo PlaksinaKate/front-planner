@@ -44,8 +44,12 @@
 	display: block;
 }
 
-.flex-grow{
+.flex-grow {
 	flex-grow: 1;
+}
+
+.alight-end {
+	align-items: flex-end;
 }
 
 .row.row_no-flex *[class*="col-"] {

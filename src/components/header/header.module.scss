@@ -1,0 +1,25 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+header {
+  padding: 1.875rem 0 0;
+}
+
+.right_content {
+  max-width: 37%;
+  width: 37%;
+}
+
+.calendar_month {
+  padding: .5625rem 1.5rem;
+  font-size: 1.625rem;
+  line-height: 1.2;
+  letter-spacing: -0.52px;
+}
+
+.calendar_arrow {
+  display: inline-block;
+  &:nth-child(1) {
+    margin-right: .5rem;
+  }
+}

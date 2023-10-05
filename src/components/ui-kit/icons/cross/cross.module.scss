@@ -1,0 +1,13 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.cross {
+  cursor: pointer;
+  path {
+    transition: fill $as $ae;
+  }
+
+  &:hover path {
+    fill: $black
+  }
+}

@@ -1,0 +1,34 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/mixins';
+
+.arrow {
+  cursor: pointer;
+
+  path {
+    transition: stroke $as $ae;
+  }
+
+  &:hover path {
+    stroke: $red
+  }
+}
+
+.right {
+  transform: rotate(180deg);
+}
+
+.fill {
+  padding: .5rem 1rem;
+  background-color: $light-gray;
+  border-radius: .5rem;
+  display: inline-block;
+  transition: all $as $ae;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:hover path {
+    color: $red;
+  }
+}
