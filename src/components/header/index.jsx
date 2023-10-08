@@ -3,7 +3,11 @@ import styles from './header.module.scss'
 import { Button } from '../ui-kit/button'
 import clsx from 'clsx';
 
-export function Header() {
+export function Header({ calendar, calendarActiveMonth }) {
+  const calendarApi = calendar.current?.getApi()
+  const nextMonth = () => calendarApi.next()
+  const prevMonth = () => calendarApi.prev()
+
   return (
     <header>
       <div className='wr'>
@@ -13,12 +17,12 @@ export function Header() {
           </div>
           <div className={clsx(styles.right_content, 'row space-between alight-end')}>
             <div className={clsx(styles.calendar_content, 'row center')}>
-              <div className={styles.calendar_month}>Сентябрь</div>
+              <div className={styles.calendar_month}>{calendarActiveMonth}</div>
               <div className={styles.calendar_arrows}>
-                <span className={styles.calendar_arrow}>
+                <span className={styles.calendar_arrow} onClick={prevMonth}>
                   <Arrow height="48" width="64" weight="4" fill />
                 </span>
-                <span className={styles.calendar_arrow}>
+                <span className={styles.calendar_arrow} onClick={nextMonth}>
                   <Arrow height="48" width="64" weight="4" fill right />
                 </span>
               </div>

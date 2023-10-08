@@ -1,0 +1,74 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.events_calendar {
+  margin: 5.5625rem 0 4rem;
+}
+
+.fc {
+  padding: 1rem 0 0;
+}
+
+.fc-scrollgrid,
+.fc-col-header-cell {
+  border: none !important;
+}
+
+.fc-scrollgrid-sync-inner {
+  text-align: right;
+}
+
+.fc-col-header-cell-cushion {
+  color: $black;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.48px;
+  text-transform: capitalize;
+  padding: 0 0 1rem !important;
+}
+
+.fc .fc-scroller-harness-liquid {
+  border: 1px solid $gray;
+  border-radius: 1.5rem;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: none;
+  border-right: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.fc-scrollgrid-sync-table tr:last-child .fc-day,
+[role="presentation"] {
+  border-bottom: none !important;
+}
+
+.fc-daygrid-day-number {
+  padding: .75rem .75rem 0 0 !important;
+  font-family: $ff2;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+}
+
+.fc-day-other {
+  .fc-daygrid-day-top {
+    opacity: 1 !important;
+  }
+
+  .fc-daygrid-day-number {
+    color: #A4A4A4;
+  }
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: transparent !important;
+}
