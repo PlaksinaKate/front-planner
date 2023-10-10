@@ -72,3 +72,12 @@
 .fc .fc-daygrid-day.fc-day-today {
   background-color: transparent !important;
 }
+
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+  margin-top: 2px; 
+}
+
+.fc-h-event {
+  background-color: transparent;
+  border: none;
+}

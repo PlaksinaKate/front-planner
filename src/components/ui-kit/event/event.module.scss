@@ -1,9 +1,19 @@
 @import '../../../styles/vars';
 @import '../../../styles/mixins';
 
+.eventWr {
+  width: 100%;
+  padding: 0 12px 0 32px;
+  margin-bottom: .25rem;
+
+  .accede {
+    padding: 0 12px 0 8px;
+  }
+}
+
 .event {
   padding: .125rem .375rem;
-  background-color: $white;
+  background-color: $light-gray;
   color: $gray;
   font-family: $ff2;
   font-size: 1.25rem;
@@ -12,7 +22,10 @@
   letter-spacing: -0.4px;
   position: relative;
   border-radius: 8px;
-  width: max-content;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 
   &.future {
     color: $black;
