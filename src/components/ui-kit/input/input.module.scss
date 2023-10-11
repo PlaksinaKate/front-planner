@@ -1,0 +1,90 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.inputWr {
+  position: relative;
+}
+
+.title {
+  color: $gray;
+  font-family: $ff2;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+  position: absolute;
+  top: 1.25rem;
+  left: 1rem;
+  transition: all $as $ae;
+}
+
+.title.visible,
+.input:focus+.title {
+  top: .75rem;
+  font-size: .875rem;
+  line-height: 1;
+}
+
+.input {
+  position: relative;
+  padding: 1.6875rem 1rem .6875rem;
+  background-color: $white;
+  font-family: $ff2;
+  color: $black;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.36px;
+  min-width: 346px;
+  width: 100%;
+
+  border-radius: 12px;
+  border: 1px solid $black;
+  margin-bottom: 2rem;
+
+  &::placeholder {
+    color: $gray;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all $as $ae;
+  }
+
+  &:focus::placeholder {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.error {
+    border: 1px solid $red;
+  }
+}
+
+.cross {
+  position: absolute;
+  top: .9375rem;
+  right: 1rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all $as $ae;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.errorText {
+  position: absolute;
+  top: 4rem;
+  color: $red;
+  font-family: $ff2;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.28px;
+}

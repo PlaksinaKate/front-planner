@@ -12,7 +12,6 @@ export function EventsCalendar({ calendar, setCalendarActiveMonth }) {
   const fetchPublicEvents = async () => {
     const data = await getPublicEvents()
     const addNewData = []
-    console.log(data.data)
     data.data.map(event => {
       const newEvent = {
         title: event.title,
@@ -54,7 +53,7 @@ function renderEventContent(eventInfo) {
   const nowDate = new Date().toJSON().slice(0, 10)
   const eventDate = eventInfo.event.startStr
   const eventState = eventDate >= nowDate ? 'future' : 'past'
-  
+
   return (
     <Event state={eventState}>{eventInfo.event.title}</Event>
   );

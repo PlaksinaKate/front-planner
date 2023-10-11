@@ -6,3 +6,12 @@ export const PAST_EVENT = 'past';
 export const ACCEDE_EVENT = 'accede';
 export const CREATED_EVENT = 'created';
 
+export const AUTHORIZTION_POPUP = 'authorization';
+export const REGISTRATION_POPUP = 'registration';
+export const ERROR_POPUP = 'error';
+export const EVENT_POPUP = 'event';
+
+export const INPUT_ERROR = {
+  email: 'Некорректный e-mail'
+}
+

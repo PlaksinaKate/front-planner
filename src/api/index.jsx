@@ -9,3 +9,12 @@ export async function getPublicEvents() {
     throw new Error(error)
   }
 }
+
+export async function isUserExist(email) {
+  try {
+    const response = await fetch(`${DEV_BACKEND_URL}/taken-emails/${email}`);
+    return response;
+  } catch (error) {
+    throw new Error(error)
+  }
+} 

@@ -1,0 +1,45 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.wr {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-color: rgba($color: $dark-gray, $alpha: 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.popup {
+  border-radius: 4rem;
+  background-color: $white;
+  padding: 5rem 4rem;
+  position: relative;
+
+  &.auth {
+    padding:  8.3125rem 7.9375rem;
+  }
+
+  &.registration {
+    padding:  5rem 5.9375rem 4rem;
+  }
+
+  &.error {
+    padding:  5.5rem 10.875rem 4rem 5rem;
+  }
+
+  &.event {
+    padding:  5rem 4rem 4rem;
+  }
+}
+
+.cross {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
