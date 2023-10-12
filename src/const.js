@@ -15,3 +15,9 @@ export const INPUT_ERROR = {
   email: 'Некорректный e-mail'
 }
 
+export const INPUT_ICONS = {
+  cross: 'cross',
+  password: 'pass',
+  date: 'date'
+}
+

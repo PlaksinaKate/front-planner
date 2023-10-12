@@ -13,6 +13,17 @@
   justify-content: center;
   align-items: center;
   z-index: 10;
+
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all $as*0.5 $ae;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+  }
 }
 
 .popup {
