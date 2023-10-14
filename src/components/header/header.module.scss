@@ -6,8 +6,8 @@ header {
 }
 
 .right_content {
-  max-width: 37%;
-  width: 37%;
+  max-width: 32%;
+  width: 32%;
 }
 
 .calendar_month {
@@ -22,4 +22,8 @@ header {
   &:nth-child(1) {
     margin-right: .5rem;
   }
+}
+
+.btnWr {
+  margin-right: 2.0625rem;
 }

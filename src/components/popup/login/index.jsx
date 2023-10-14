@@ -6,7 +6,7 @@ import { Button } from '../../ui-kit/button'
 import { useState, useEffect } from "react";
 import { loginUser } from "../../../api";
 
-export function Login({ isOpenPopupLogin, setIsOpenPopupLogin, email, setEmail, setIsOpenErrorPopup }) {
+export function Login({ isOpenPopupLogin, setIsOpenPopupLogin, email, setEmail, setIsOpenErrorPopup, setToken }) {
   const [pass, setPass] = useState('')
   const [error, setError] = useState('')
 
@@ -20,8 +20,8 @@ export function Login({ isOpenPopupLogin, setIsOpenPopupLogin, email, setEmail, 
   const fetchLoginUser = async () => {
     const response = await loginUser(email, pass)
     if (response.ok) {
-      /* const data = await response.json()
-      const token = data.jwt */
+      const data = await response.json()
+      setToken(data.jwt)
       closePopup()
     } else if (response.status < 500) {
       setError(INPUT_ERROR.password)

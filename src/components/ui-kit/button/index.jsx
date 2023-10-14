@@ -6,14 +6,15 @@ function BaseButton({ component = 'button', children, ...props }) {
   return createElement(component, props, children)
 }
 
-export function Button({className, disabled, border, ...props}) {
+export function Button({className, disabled, border, paddingMin, ...props}) {
   return (
     <BaseButton
       className={clsx(
         styles.button,
         {
           [styles.disabled]: disabled,
-          [styles.border]: border
+          [styles.border]: border,
+          [styles.paddingMin]: paddingMin
         },
         className,
       )

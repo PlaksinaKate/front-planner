@@ -2,13 +2,17 @@ import { Arrow, Logo } from '../ui-kit/icons';
 import styles from './header.module.scss'
 import { Button } from '../ui-kit/button'
 import clsx from 'clsx';
+import defaultImg from '/default.jpg'
+import { Plus } from '../ui-kit/icons';
 
-export function Header({ calendar, calendarActiveMonth, setIsOpenPopupAuth }) {
+export function Header({ calendar, calendarActiveMonth, setIsOpenPopupAuth, token }) {
   const calendarApi = calendar.current?.getApi()
   const nextMonth = () => calendarApi.next()
   const prevMonth = () => calendarApi.prev()
 
   const handleLoginClick = () => setIsOpenPopupAuth(true)
+
+  console.log(token)
 
   return (
     <header>
@@ -30,9 +34,22 @@ export function Header({ calendar, calendarActiveMonth, setIsOpenPopupAuth }) {
               </div>
             </div>
             <div className={styles.user_content}>
-              <div className={styles.user_btn} onClick={handleLoginClick}>
-                <Button>Войти</Button>
-              </div>
+              {token === '' ?
+                <div className={styles.user_btn} onClick={handleLoginClick}>
+                  <Button>Войти</Button>
+                </div>
+                :
+                <div className='flex alight-end'>
+                  <div className={styles.btnWr}>
+                    <Button paddingMin>
+                      <Plus />
+                    </Button>
+                  </div>
+                  <div className={styles.user}>
+                    <img src={defaultImg} alt="" />
+                  </div>
+                </div>
+              }
             </div>
           </div>
         </div>

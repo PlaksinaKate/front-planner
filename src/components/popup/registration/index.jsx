@@ -8,7 +8,7 @@ import { Button } from "../../ui-kit/button";
 import styles from './registration.module.scss'
 import { registerUser } from "../../../api";
 
-export function Registration({ email, setEmail, setOpenRegistation, openRegistation, setIsOpenErrorPopup }) {
+export function Registration({ email, setEmail, setOpenRegistation, openRegistation, setIsOpenErrorPopup, setToken }) {
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
   const [repeatPassword, setRepeatPassword] = useState('')
@@ -45,11 +45,10 @@ export function Registration({ email, setEmail, setOpenRegistation, openRegistat
   }
 
   const fetchRegisterUser = async () => {
-    console.log(email)
     const response = await registerUser(userName, email, password)
     if (response.ok) {
       const data = await response.json()
-      const token = data.jwt
+      setToken(data.jwt)
       closePopup()
     } else {
       //что-то пошло не так
