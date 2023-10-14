@@ -1,10 +1,7 @@
 import { useRef, useState } from 'react';
 import { Header } from '../../components/header'
 import { EventsCalendar } from '../../components/eventsCalendar'
-import { Registration } from '../../components/popup/registration'
-import { Authentication } from '../../components/popup/authentication';
-import { Login } from '../../components/popup/Login';
-import { Error } from '../../components/popup/error';
+import { Registration, Authentication, Login, Error } from '../../components/popup'
 
 export function MainPage() {
   const calendar = useRef(null)
