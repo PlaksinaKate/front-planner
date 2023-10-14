@@ -7,11 +7,22 @@ export function MainPage() {
   const calendar = useRef(null)
   const [calendarActiveMonth, setCalendarActiveMonth] = useState()
   const [email, setEmail] = useState('')
-  const [token, setToken] = useState('')
+  const [isAuthorization, setIsAuthorization] = useState(false)
   const [isOpenPopupAuth, setIsOpenPopupAuth] = useState(false)
   const [isOpenPopupLogin, setIsOpenPopupLogin] = useState(false)
   const [isOpenRegistation, setIsOpenRegistation] = useState(false)
   const [isOpenErrorPopup, setIsOpenErrorPopup] = useState(false)
+
+  function setToken (token) {
+    localStorage.setItem(
+      'token',
+      JSON.stringify({
+        value: token,
+        timeStamp: new Date().getTime(),
+      })
+    )
+    setIsAuthorization(true)
+  }
 
   return (
     <>
@@ -19,7 +30,7 @@ export function MainPage() {
         calendar={calendar}
         calendarActiveMonth={calendarActiveMonth}
         setIsOpenPopupAuth={setIsOpenPopupAuth}
-        token={token}
+        isAuthorization={isAuthorization}
       />
       <EventsCalendar calendar={calendar} setCalendarActiveMonth={setCalendarActiveMonth} />
       <Authentication

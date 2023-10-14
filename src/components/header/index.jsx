@@ -5,14 +5,12 @@ import clsx from 'clsx';
 import defaultImg from '/default.jpg'
 import { Plus } from '../ui-kit/icons';
 
-export function Header({ calendar, calendarActiveMonth, setIsOpenPopupAuth, token }) {
+export function Header({ calendar, calendarActiveMonth, setIsOpenPopupAuth, isAuthorization }) {
   const calendarApi = calendar.current?.getApi()
   const nextMonth = () => calendarApi.next()
   const prevMonth = () => calendarApi.prev()
 
   const handleLoginClick = () => setIsOpenPopupAuth(true)
-
-  console.log(token)
 
   return (
     <header>
@@ -34,7 +32,7 @@ export function Header({ calendar, calendarActiveMonth, setIsOpenPopupAuth, toke
               </div>
             </div>
             <div className={styles.user_content}>
-              {token === '' ?
+              {!isAuthorization ?
                 <div className={styles.user_btn} onClick={handleLoginClick}>
                   <Button>Войти</Button>
                 </div>
