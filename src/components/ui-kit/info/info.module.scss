@@ -1,0 +1,22 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.info {
+  background-color: $light-light-gray;
+  padding: .75rem .5rem;
+  max-width: 520px;
+  border-radius: .75rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.text {
+  font-family: $ff2;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.28px;
+}

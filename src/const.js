@@ -12,7 +12,12 @@ export const ERROR_POPUP = 'error';
 export const EVENT_POPUP = 'event';
 
 export const INPUT_ERROR = {
-  email: 'Некорректный e-mail'
+  email: 'Некорректный e-mail',
+  emailRequired: 'Обязательное поле',
+  password: 'Неверный пароль',
+  passwordRequired: 'Обязательное поле',
+  validatePassword: 'Используйте латинские буквы, цифры и спец символы',
+  passwordNotSame: 'Пароли не совпадают'
 }
 
 export const INPUT_ICONS = {

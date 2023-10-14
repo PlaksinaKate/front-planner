@@ -3,14 +3,12 @@ import styles from './header.module.scss'
 import { Button } from '../ui-kit/button'
 import clsx from 'clsx';
 
-export function Header({ calendar, calendarActiveMonth, setIsOpenPopupLogin }) {
+export function Header({ calendar, calendarActiveMonth, setIsOpenPopupAuth }) {
   const calendarApi = calendar.current?.getApi()
   const nextMonth = () => calendarApi.next()
   const prevMonth = () => calendarApi.prev()
 
-  const handleLoginClick = () => {
-    setIsOpenPopupLogin(true)
-  }
+  const handleLoginClick = () => setIsOpenPopupAuth(true)
 
   return (
     <header>

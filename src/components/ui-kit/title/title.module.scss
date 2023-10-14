@@ -21,6 +21,14 @@
   }
 
   &.marignSmall {
+    margin-bottom: 1.5rem;
+  }
+
+  &.marignLittle {
     margin-bottom: 1rem;
+  }
+
+  &.textLeft {
+    text-align: left;
   }
 }

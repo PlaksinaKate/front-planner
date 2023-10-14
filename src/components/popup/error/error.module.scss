@@ -1,0 +1,27 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.img {
+  position: absolute;
+  top: 8.9375rem;
+  right: -7.75rem;
+  z-index: 0;
+}
+
+.contentWr {
+  position: relative;
+  z-index: 1;
+}
+
+.text {
+  font-size: 1.125rem;
+  line-height: 1;
+  letter-spacing: -0.36px;
+  color: $red;
+  margin-bottom: 6.375rem;
+}
+
+.btnWr {
+  max-width: 8.8125rem;
+  width: 100%;
+}

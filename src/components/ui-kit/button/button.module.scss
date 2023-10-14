@@ -18,9 +18,7 @@ button,
   user-select: none;
   width: 100%;
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:hover {
     outline: none;
     background-color: $red;
   }
@@ -31,9 +29,7 @@ button,
   border: 1px solid $black;
   color: $black;
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:hover {
     color: $red;
     background-color: unset;
     border: 1px solid $red;
@@ -43,7 +39,7 @@ button,
 .disabled,
 .disabled:hover,
 .disabled.border {
-  background-color: $white;
+  background-color: $light-gray;
   color: $gray;
   cursor: not-allowed;
   border: unset;

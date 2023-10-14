@@ -4,7 +4,7 @@ import { Cross, Password } from '../icons';
 import { useRef, useState } from 'react';
 import { INPUT_ICONS } from '../../../const';
 
-export function BaseInput({ type, title, placeholder, value, error, onChange, required, setValue, icon = INPUT_ICONS.cross }) {
+export function BaseInput({ type, title, placeholder, value, error='', onChange, required, setValue, icon = INPUT_ICONS.cross, props }) {
   const inputRef = useRef(null)
   const [inputType, setInputType] = useState(type)
 
@@ -14,7 +14,6 @@ export function BaseInput({ type, title, placeholder, value, error, onChange, re
   }
 
   const handlePassClick = () => {
-    console.log(inputRef.current.type)
     inputRef.current.type === 'text' ?
       inputRef.current.type = 'password' :
       inputRef.current.type = 'text';
@@ -37,6 +36,7 @@ export function BaseInput({ type, title, placeholder, value, error, onChange, re
         onChange={onChange}
         ref={inputRef}
         required={required}
+        {...props}
       />
 
       <div className={clsx(styles.title, { [styles.visible]: value !== '' })}>{title}</div>

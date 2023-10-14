@@ -25,6 +25,7 @@ export async function loginUser(email, pass) {
       identifier: email,
       password: pass
     }
+
     const response = await fetch(`${DEV_BACKEND_URL}/auth/local`,
       {
         method: 'POST',
@@ -33,7 +34,30 @@ export async function loginUser(email, pass) {
           'Content-Type': 'application/json',
         }
       });
-    console.log(response)
+
+    return response;
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
+export async function registerUser(username, email, pass) {
+  try {
+    const bodyData = {
+      username: username,
+      email: email,
+      password: pass
+    }
+
+    const response = await fetch(`${DEV_BACKEND_URL}/auth/local/register`,
+      {
+        method: 'POST',
+        body: JSON.stringify(bodyData),
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+
     return response;
   } catch (error) {
     throw new Error(error)

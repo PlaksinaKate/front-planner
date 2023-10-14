@@ -16,6 +16,7 @@
   top: 1.25rem;
   left: 1rem;
   transition: all $as $ae;
+  z-index: 0;
 }
 
 .title.visible,
@@ -28,7 +29,7 @@
 .input {
   position: relative;
   padding: 1.6875rem 1rem .6875rem;
-  background-color: $white;
+  background-color: transparent;
   font-family: $ff2;
   color: $black;
   font-size: 1.125rem;
@@ -41,6 +42,7 @@
   border-radius: 12px;
   border: 1px solid $black;
   margin-bottom: 2rem;
+  z-index: 1;
 
   &::placeholder {
     color: $gray;
@@ -71,6 +73,7 @@
   opacity: 0;
   visibility: hidden;
   transition: all $as $ae;
+  z-index: 2;
 
   &.visible {
     opacity: 1;
