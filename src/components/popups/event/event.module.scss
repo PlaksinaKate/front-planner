@@ -1,0 +1,102 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.datePlace {
+  flex-basis: 23%;
+  width: 23%;
+  border-radius: 1.5rem;
+  padding: .9375rem .75rem .9375rem 1rem;
+  background-color: $light-light-gray;
+}
+
+.desc {
+  font-family: $ff2;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.025rem;
+  flex-basis: 74%;
+  width: 74%;
+}
+
+.wr {
+  width: 52vw;
+}
+
+.dates {
+  margin-bottom: .25rem;
+  border-bottom: 1px solid $light-gray;
+}
+
+.date {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.36px;
+  margin-bottom: .25rem;
+}
+
+.place {
+  font-family: $ff2;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.36px;
+  margin-top: .5rem;
+}
+
+.participants {
+  margin: 2.5rem 0 3.5625rem;
+}
+
+.galleryHeaderWr {
+  margin-bottom: 2.5rem;
+}
+
+.navigation {
+  &:nth-child(1) {
+    margin-right: .5rem;
+  }
+}
+
+.galleryList .swiper {
+  margin-right: -5rem;
+  padding: 0 0 2.25rem;
+}
+
+.galleryItem img {
+  border-radius: 1.5rem;
+}
+
+.bottom {
+  margin-top: 3rem;
+}
+
+.enty {
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1;
+  letter-spacing: -0.36px;
+
+  span {
+    cursor: pointer;
+    color: $red;
+    transition: all $as $ae;
+  }
+
+  span:hover {
+    color: $black;
+  }
+}
+
+.btnWr {
+  max-width: 21.4375rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pastEvent {
+  max-width: 12.625rem;
+  width: 100%;
+  margin: 0 auto;
+}

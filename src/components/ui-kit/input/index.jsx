@@ -1,10 +1,10 @@
 import styles from './input.module.scss'
 import clsx from 'clsx';
-import { Cross, Password } from '../icons';
+import { Cross, Password, CalendarIcon } from '../icons';
 import { useRef, useState } from 'react';
 import { INPUT_ICONS } from '../../../const';
 
-export function BaseInput({ type, title, placeholder, value, error='', onChange, required, setValue, icon = INPUT_ICONS.cross, props }) {
+export function BaseInput({ type, title, placeholder, value, error = '', onChange, required, setValue, icon = INPUT_ICONS.cross, props }) {
   const inputRef = useRef(null)
   const [inputType, setInputType] = useState(type)
 
@@ -17,7 +17,7 @@ export function BaseInput({ type, title, placeholder, value, error='', onChange,
     inputRef.current.type === 'text' ?
       inputRef.current.type = 'password' :
       inputRef.current.type = 'text';
-      setInputType(inputRef.current.type)
+    setInputType(inputRef.current.type)
   }
 
   return (
@@ -49,8 +49,12 @@ export function BaseInput({ type, title, placeholder, value, error='', onChange,
           <div className={clsx(styles.cross, { [styles.visible]: value !== '' })} onClick={handlePassClick}>
             <Password show={inputType === 'text'} />
           </div>
-          :
-          <div></div>
+          : icon === INPUT_ICONS.date ?
+            <div className={styles.date}>
+              <CalendarIcon />
+            </div>
+            :
+            <div></div>
       }
 
       <div className={styles.errorText}>{error}</div>

@@ -26,6 +26,8 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  cursor: pointer;
+  transition: all $as $ae;
 
   &.future {
     color: $black;
@@ -62,5 +64,9 @@
       height: 16px;
       background: url('star.svg') no-repeat center;
     }
+  }
+
+  &:hover {
+    color: $red;
   }
 }

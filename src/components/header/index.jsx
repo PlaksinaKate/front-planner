@@ -5,12 +5,13 @@ import clsx from 'clsx';
 import defaultImg from '/default.jpg'
 import { Plus } from '../ui-kit/icons';
 
-export function Header({ calendar, calendarActiveMonth, setIsOpenPopupAuth, isAuthorization }) {
+export function Header({ calendar, calendarActiveMonth, setIsOpenPopupAuth, isAuthorization, setIsCreateEventPopupOpened }) {
   const calendarApi = calendar.current?.getApi()
   const nextMonth = () => calendarApi.next()
   const prevMonth = () => calendarApi.prev()
 
   const handleLoginClick = () => setIsOpenPopupAuth(true)
+  const handlePlusClick = () => setIsCreateEventPopupOpened(true)
 
   return (
     <header>
@@ -38,8 +39,8 @@ export function Header({ calendar, calendarActiveMonth, setIsOpenPopupAuth, isAu
                 </div>
                 :
                 <div className='flex alight-end'>
-                  <div className={styles.btnWr}>
-                    <Button paddingMin>
+                  <div className={styles.btnWr} onClick={handlePlusClick}>
+                    <Button paddingMin >
                       <Plus />
                     </Button>
                   </div>

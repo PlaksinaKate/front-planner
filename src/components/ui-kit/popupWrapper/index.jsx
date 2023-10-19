@@ -15,8 +15,7 @@ export function PopupWrapper({ children, state = EVENT_POPUP, isOpenPopup, setIs
           [styles.auth]: state === AUTHORIZTION_POPUP,
           [styles.registration]: state === REGISTRATION_POPUP,
           [styles.error]: state === ERROR_POPUP,
-          [styles.event]: state === EVENT_POPUP,
-        }
+          [styles.event]: state === EVENT_POPUP,        }
       )}>
         <div className={styles.cross} onClick={handleCrossClick}>
           <Cross />

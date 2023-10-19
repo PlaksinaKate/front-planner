@@ -1,10 +1,14 @@
-export const LOCAL_BACKEND_URL = 'http://localhost:1337/api';
-export const DEV_BACKEND_URL = 'https://planner.rdclr.ru/api';
+export const LOCAL_BACKEND_URL = 'http://localhost:1337/';
+export const DEV_BACKEND_URL = 'https://planner.rdclr.ru';
+export const DEV_BACKEND_URL_API = 'https://planner.rdclr.ru/api';
 
 export const FUTURE_EVENT = 'future';
 export const PAST_EVENT = 'past';
 export const ACCEDE_EVENT = 'accede';
 export const CREATED_EVENT = 'created';
+
+export const MONTHS = ['январь' , 'февраль' , 'март' , 'апрель' , 'май' , 'июнь' , 'июль' , 'август' , 'сентябрь' , 'октябрь' , 'ноябрь' , 'декабрь']
+export const WEEKS_DAY = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота']
 
 export const AUTHORIZTION_POPUP = 'authorization';
 export const REGISTRATION_POPUP = 'registration';

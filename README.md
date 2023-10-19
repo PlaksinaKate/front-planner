@@ -8,3 +8,6 @@
 
 ## [Макет](https://www.figma.com/file/Ywwm3fZCeqGs6tE07Tr3Kk/Планировщик-ивентов)
 
+## [Swagger](https://planner.rdclr.ru/documentation/v1.0.0)
+
+

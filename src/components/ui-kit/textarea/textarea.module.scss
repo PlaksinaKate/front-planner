@@ -1,7 +1,7 @@
 @import '../../../styles/vars';
 @import '../../../styles/mixins';
 
-.inputWr {
+.wr {
   position: relative;
 }
 
@@ -20,13 +20,13 @@
 }
 
 .title.visible,
-.input:focus+.title {
+.textarea:focus+.title {
   top: .75rem;
   font-size: .875rem;
   line-height: 1;
 }
 
-.input {
+.textarea {
   position: relative;
   padding: 1.6875rem 1rem .6875rem;
   background-color: transparent;
@@ -66,29 +66,6 @@
   &.error {
     border: 1px solid $red;
   }
-}
-
-.cross,
-.date {
-  position: absolute;
-  top: .9375rem;
-  right: 1rem;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: all $as $ae;
-  z-index: 2;
-  text-align: right;
-
-  &.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.date {
-  opacity: 1;
-  visibility: visible;
 }
 
 .errorText {

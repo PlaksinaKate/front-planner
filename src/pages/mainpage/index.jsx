@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { Header } from '../../components/header'
 import { EventsCalendar } from '../../components/eventsCalendar'
-import { Registration, Authentication, Login, Error } from '../../components/popup'
+import { Registration, Authentication, Login, Error, EventPopup, CreateEvent } from '../../components/popups'
 
 export function MainPage() {
   const calendar = useRef(null)
@@ -12,15 +12,15 @@ export function MainPage() {
   const [isOpenPopupLogin, setIsOpenPopupLogin] = useState(false)
   const [isOpenRegistation, setIsOpenRegistation] = useState(false)
   const [isOpenErrorPopup, setIsOpenErrorPopup] = useState(false)
+  const [isOpenEventPopup, setIsOpenEventPopup] = useState(false)
+  const [openedEvent, setOpenedEvent] = useState(0)
+  const [meId, setMeId] = useState(0)
+  const [isJoinEventPopupOpened, setIsJoinEventPopupOpened] = useState(false)
+  const [isLeaveEventPopupOpened, setIsLeaveEventPopupOpened] = useState(false)
+  const [isCreateEventPopupOpened, setIsCreateEventPopupOpened] = useState(true)
 
-  function setToken (token) {
-    localStorage.setItem(
-      'token',
-      JSON.stringify({
-        value: token,
-        timeStamp: new Date().getTime(),
-      })
-    )
+  function setToken(token) {
+    localStorage.setItem('token', token)
     setIsAuthorization(true)
   }
 
@@ -31,8 +31,18 @@ export function MainPage() {
         calendarActiveMonth={calendarActiveMonth}
         setIsOpenPopupAuth={setIsOpenPopupAuth}
         isAuthorization={isAuthorization}
+        setIsCreateEventPopupOpened={setIsCreateEventPopupOpened}
       />
-      <EventsCalendar calendar={calendar} setCalendarActiveMonth={setCalendarActiveMonth} />
+      <EventsCalendar
+        meId={meId}
+        calendar={calendar}
+        setCalendarActiveMonth={setCalendarActiveMonth}
+        setIsOpenEventPopup={setIsOpenEventPopup}
+        setOpenedEvent={setOpenedEvent}
+        openedEvent={openedEvent}
+        isJoinEventPopupOpened={isJoinEventPopupOpened}
+        isLeaveEventPopupOpened={isLeaveEventPopupOpened}
+      />
       <Authentication
         email={email}
         setEmail={setEmail}
@@ -43,6 +53,7 @@ export function MainPage() {
         setIsOpenErrorPopup={setIsOpenErrorPopup}
       />
       <Login
+        setMeId={setMeId}
         email={email}
         setEmail={setEmail}
         setToken={setToken}
@@ -54,13 +65,39 @@ export function MainPage() {
         email={email}
         setEmail={setEmail}
         setToken={setToken}
+        setMeId={setMeId}
         setOpenRegistation={setIsOpenRegistation}
         openRegistation={isOpenRegistation}
         setIsOpenErrorPopup={setIsOpenErrorPopup}
       />
+      <Registration
+        email={email}
+        setEmail={setEmail}
+        setToken={setToken}
+        setOpenRegistation={setIsOpenRegistation}
+        openRegistation={isOpenRegistation}
+        setIsOpenErrorPopup={setIsOpenErrorPopup}
+      />
+      <EventPopup
+        meId={meId}
+        isOpenEventPopup={isOpenEventPopup}
+        setIsOpenEventPopup={setIsOpenEventPopup}
+        isAuthorization={isAuthorization}
+        setIsOpenPopupAuth={setIsOpenPopupAuth}
+        openedEvent={openedEvent}
+        setIsJoinEventPopupOpened={setIsJoinEventPopupOpened}
+        isJoinEventPopupOpened={isJoinEventPopupOpened}
+        setIsLeaveEventPopupOpened={setIsLeaveEventPopupOpened}
+        isLeaveEventPopupOpened={isLeaveEventPopupOpened}
+      />
       <Error
         isOpenErrorPopup={isOpenErrorPopup}
         setIsOpenErrorPopup={setIsOpenErrorPopup}
+      />
+      <CreateEvent
+        isAuthorization={isAuthorization}
+        setIsCreateEventPopupOpened={setIsCreateEventPopupOpened}
+        isCreateEventPopupOpened={isCreateEventPopupOpened}
       />
     </>
   );

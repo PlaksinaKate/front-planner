@@ -32,3 +32,10 @@
     color: $red;
   }
 }
+
+.disabled {
+  cursor: not-allowed;
+  path {
+    stroke: $gray !important;
+  }
+}

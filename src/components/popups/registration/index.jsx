@@ -49,6 +49,7 @@ export function Registration({ email, setEmail, setOpenRegistation, openRegistat
     if (response.ok) {
       const data = await response.json()
       setToken(data.jwt)
+      setMeId(data.data.id)
       closePopup()
     } else {
       //что-то пошло не так
@@ -74,7 +75,6 @@ export function Registration({ email, setEmail, setOpenRegistation, openRegistat
     setUserName('')
     setPassword('')
     setRepeatPassword('')
-    setEmail('')
   }, [openRegistation])
 
   return (

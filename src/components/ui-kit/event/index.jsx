@@ -9,6 +9,7 @@ export function Event({ state = { PAST_EVENT }, children }) {
     [styles.accede]: state === ACCEDE_EVENT,
     [styles.created]: state === CREATED_EVENT,
   }
+
   return (
     <div className={clsx(
       styles.eventWr,

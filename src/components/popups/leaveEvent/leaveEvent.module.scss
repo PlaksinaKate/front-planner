@@ -1,0 +1,12 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.btnsWr {
+  max-width: 14rem;
+  width: 100%;
+  margin: 0 auto;
+
+  button {
+    width: 45%;
+  }
+}

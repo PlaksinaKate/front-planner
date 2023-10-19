@@ -1,0 +1,26 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.inputs {
+  width: 68vw;
+
+  .leftContent {
+    width: 60%;
+  }
+
+  .rightContent {
+    width: 37%;
+  }
+}
+
+.btnWr {
+  max-width: 9rem;
+  width: 100%;
+  margin: 4rem auto 0 ;
+}
+
+.dates {
+  div:nth-child(1) {
+    margin-right: .5rem;
+  }
+}
