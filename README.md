@@ -10,4 +10,14 @@
 
 ## [Swagger](https://planner.rdclr.ru/documentation/v1.0.0)
 
+## Installation
+
+1. npm i
+2. vite dev
+
+
+
+
+
+
 
