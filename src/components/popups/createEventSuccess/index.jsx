@@ -1,9 +1,7 @@
-import { PopupWrapper } from "../../ui-kit/popupWrapper";
+import { PopupWrapper, Title , Button} from "../../ui-kit";
 import styles from './createEventSuccess.module.scss'
 import unicorn from '/unicorn.png'
 import { ERROR_POPUP } from "../../../const";
-import { Title } from "../../ui-kit/title";
-import { Button } from "../../ui-kit/button";
 import clsx from "clsx";
 
 export function CreateEventSuccess({ title, location, getDate, isOpenPopup, setIsOpenPopup }) {  

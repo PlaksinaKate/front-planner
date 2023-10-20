@@ -1,11 +1,9 @@
 import styles from './event.module.scss'
-import { PopupWrapper } from '../../ui-kit/popupWrapper';
-import { Title } from '../../ui-kit/title';
+import { PopupWrapper, Title, Info } from '../../ui-kit';
 import clsx from 'clsx';
 import { getDate } from '../../../helpers';
 import { ParticipantsList } from './participantsList'
 import { Gallery } from './gallery';
-import { Info } from '../../ui-kit/info';
 import { BottomContent } from './bottomContent';
 import { JoinEventSuccess } from '../joinEventSuccess';
 import { LeaveEvent } from '../leaveEvent';

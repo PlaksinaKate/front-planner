@@ -1,29 +1,15 @@
 import { Button } from "./button"
-import { Cross, CalendarIcon, Arrow, Info } from "./icons"
+import { Cross, CalendarIcon, Arrow, InfoIcon } from "./icons"
 import { Event } from "./event"
 import { Participant } from "./participant"
+import { More } from "./participant"
+import { FileInput } from "./fileInput"
+import { Info } from "./info"
+import { BaseInput } from "./input"
+import { PopupWrapper } from "./popupWrapper"
+import { SearchInput } from "./searchInput"
+import { Textarea } from "./textarea"
+import { Title } from "./title"
+import { Wrapper } from './wrapper'
 
-export function UiKit() {
-  return (
-    <>
-      <Button>button</Button>
-      <Button component="a" disabled>button</Button>
-      <Button border>button</Button>
-      <Button component="a" border disabled>button</Button>
-      <Event>Event</Event>
-      <Event state="future">Event</Event>
-      <Event state="accede">Event</Event>
-      <Event state="created">Event</Event>
-      <Cross />
-      <CalendarIcon />
-      <Arrow />
-      <Arrow right/>
-      <Info />
-      <Info small/>
-      <Participant 
-        name='Илья'
-        organaizer
-      />
-    </>
-  )
-}
+export { More, Button, Cross, CalendarIcon, Arrow, InfoIcon, Event, Participant, FileInput, Info, BaseInput, PopupWrapper, SearchInput, Textarea, Title, Wrapper }

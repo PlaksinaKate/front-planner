@@ -1,6 +1,5 @@
 import styles from './event.module.scss'
-import { Title } from '../../ui-kit/title';
-import { Participant, More } from '../../ui-kit/participant';
+import { Title, Participant, More } from '../../ui-kit';
 import clsx from 'clsx';
 
 export function ParticipantsList({ owner, participants }) {

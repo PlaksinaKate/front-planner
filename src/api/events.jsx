@@ -23,11 +23,7 @@ export async function getEventById(id) {
 export async function getUploadFile(file) {
   try {
     const bodyData = {
-      path: event.title,
-      refId: event.description,
-      ref: event.dateStart,
-      field: event.location,
-      files: event.participants
+      files: file
     }
 
     const token = sessionStorage.getItem('token')
