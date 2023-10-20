@@ -7,7 +7,7 @@ import { Cross } from '../icons';
 import defaultImg from '/default.jpg'
 
 
-export function SearchInput({ title, placeholder, value, setValue, required, organaizerId, error }) {
+export function SearchInput({ isAuthorization, title, placeholder, value, setValue, required, organaizerId, error }) {
   const [users, setUsers] = useState([])
   const [searchRes, setSearchRes] = useState([])
   const [inputValue, setInputValue] = useState('')
@@ -23,12 +23,15 @@ export function SearchInput({ title, placeholder, value, setValue, required, org
   const hangleChangeInput = (e) => {
     const inputValue = e.target.value
     setInputValue(inputValue)
-    const searchResult = users?.filter((item) => item.username.includes(inputValue) && item.id !== organaizerId )
+    const searchResult = users?.filter((item) => item.username.includes(inputValue) && item.id !== organaizerId)
     inputValue !== '' && setSearchRes(searchResult)
   }
 
   const handleAddParticipant = (username) => {
-    setValue((value) => [...value, username])
+    const thisUser = users?.filter((item) => item.username === username)[0]
+    setValue((value) => [...value, thisUser])
+    setInputValue('')
+    setSearchRes([])
   }
 
   const fetchUsers = async () => {
@@ -37,8 +40,10 @@ export function SearchInput({ title, placeholder, value, setValue, required, org
   }
 
   useEffect(() => {
-    fetchUsers()
-  }, [])
+    if (isAuthorization) {
+      fetchUsers()
+    }
+  }, [isAuthorization])
 
 
   return (
@@ -58,7 +63,7 @@ export function SearchInput({ title, placeholder, value, setValue, required, org
                   <div className={styles.img}>
                     <img src={defaultImg} alt="" />
                   </div>
-                  <div className={styles.name}>{item}</div>
+                  <div className={styles.name}>{item.username}</div>
                 </div>
               })}
             </div>
@@ -81,7 +86,7 @@ export function SearchInput({ title, placeholder, value, setValue, required, org
           </div>
         </div>
 
-        <div className={clsx(styles.cross, { [styles.visible]: value.length !== 0  })} onClick={handleCrossClick}>
+        <div className={clsx(styles.cross, { [styles.visible]: value.length !== 0 })} onClick={handleCrossClick}>
           <Cross small error={error !== ''} />
         </div>
 

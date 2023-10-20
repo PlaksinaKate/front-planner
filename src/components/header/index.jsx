@@ -16,7 +16,7 @@ export function Header({ calendar, calendarActiveMonth, setIsOpenPopupAuth, isAu
   return (
     <header>
       <div className='wr'>
-        <div className='flex space-between alight-end'>
+        <div className={clsx(styles.rowWr,'flex', 'space-between', 'alight-end')}>
           <div className={styles.logo}>
             <Logo />
           </div>

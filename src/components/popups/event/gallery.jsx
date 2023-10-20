@@ -21,10 +21,13 @@ export function Gallery({ photos }) {
   useEffect(() => {
     if (swiperActiveIndex === 0) {
       setIsDisabledBtnPrev(true)
-    } else if (swiperActiveIndex === swiper?.slides.length - 3) {
-      setIsDisabledBtnNext(true)
     } else {
       setIsDisabledBtnPrev(false)
+    }
+    
+    if (swiper?.slides === undefined || swiperActiveIndex === swiper?.slides.length - 3) {
+      setIsDisabledBtnNext(true)
+    } else {
       setIsDisabledBtnNext(false)
     }
   }, [swiperActiveIndex])
@@ -51,7 +54,6 @@ export function Gallery({ photos }) {
       <div className={clsx(styles.galleryList)}>
         <Swiper
           spaceBetween={16}
-          slidesPerView={3.5}
           onSlideChange={() => setSwiperActiveIndex(swiper.activeIndex)}
           onSwiper={(s) => setSwiper(s)}
           navigation={{ nextEl: "#swiper-next", prevEl: "#swiper-back" }}
@@ -60,10 +62,21 @@ export function Gallery({ photos }) {
           }}
           modules={[Pagination]}
           className={styles.swiper}
+          breakpoints={{
+            1280: {
+              slidesPerView: 3.5
+            },
+            900: {
+              slidesPerView: 2.5
+            },
+            0: {
+              slidesPerView: 1.5
+            }
+          }}
         >
           {photoSlides}
         </Swiper>
       </div>
-    </div>
+    </div >
   );
 }

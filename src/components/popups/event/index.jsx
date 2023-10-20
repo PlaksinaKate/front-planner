@@ -2,7 +2,7 @@ import styles from './event.module.scss'
 import { PopupWrapper } from '../../ui-kit/popupWrapper';
 import { Title } from '../../ui-kit/title';
 import clsx from 'clsx';
-import { MONTHS, WEEKS_DAY } from '../../../const';
+import { getDate } from '../../../helpers';
 import { ParticipantsList } from './participantsList'
 import { Gallery } from './gallery';
 import { Info } from '../../ui-kit/info';
@@ -12,24 +12,6 @@ import { LeaveEvent } from '../leaveEvent';
 
 export function EventPopup({ meId, isOpenEventPopup, setIsOpenEventPopup, isAuthorization, setIsOpenPopupAuth, openedEvent, isJoinEventPopupOpened, setIsJoinEventPopupOpened, setIsLeaveEventPopupOpened, isLeaveEventPopupOpened }) {
   const { id, title, description, start, location, participants, photos, owner } = openedEvent
-
-  const getDate = () => {
-    if (start !== null) {
-      const dateStart = new Date(start)
-      const day = WEEKS_DAY[dateStart.getDay()]
-      const date = dateStart.getDate() + ' ' + MONTHS[dateStart.getMonth()]
-      const hours = dateStart.getHours()
-      const minutes = dateStart.getMinutes()
-      const hoursModify = hours < 10 ? '0' + hours : hours
-      const minutesModify = minutes < 10 ? '0' + minutes : minutes
-      const time = `${hoursModify}:${minutesModify}`
-      return {
-        day: day,
-        date: date,
-        time: time
-      }
-    }
-  }
 
   const pastEvent = () => {
     if (isPastEvent()) {
@@ -56,9 +38,9 @@ export function EventPopup({ meId, isOpenEventPopup, setIsOpenEventPopup, isAuth
           <div className={clsx('row', 'space-between', styles.descWr)}>
             <div className={styles.datePlace}>
               <div className={styles.dates}>
-                <div className={styles.date}>{getDate().day}</div>
-                <div className={styles.date}>{getDate().date}</div>
-                <div className={styles.date}>{getDate().time}</div>
+                <div className={styles.date}>{getDate(start).day}</div>
+                <div className={styles.date}>{getDate(start).date}</div>
+                <div className={styles.date}>{getDate(start).time}</div>
               </div>
               <div className={styles.place}>{location}</div>
             </div>
@@ -69,6 +51,7 @@ export function EventPopup({ meId, isOpenEventPopup, setIsOpenEventPopup, isAuth
           <BottomContent
             meId={meId}
             id={id}
+            owner={owner}
             participants={participants}
             isPastEvent={isPastEvent}
             isAuthorization={isAuthorization}
@@ -81,8 +64,9 @@ export function EventPopup({ meId, isOpenEventPopup, setIsOpenEventPopup, isAuth
         </div>
       </PopupWrapper>
       <JoinEventSuccess
-        event={openedEvent}
-        getDate={getDate}
+        title={title}
+        location={location}
+        getDate={() => getDate(start)}
         isJoinEventPopupOpened={isJoinEventPopupOpened}
         setIsJoinEventPopupOpened={setIsJoinEventPopupOpened}
       />

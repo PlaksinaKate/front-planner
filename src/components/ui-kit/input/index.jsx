@@ -4,7 +4,7 @@ import { Cross, Password, CalendarIcon } from '../icons';
 import { useRef, useState } from 'react';
 import { INPUT_ICONS } from '../../../const';
 
-export function BaseInput({ type, title, placeholder, value, error = '', onChange, required, setValue, icon = INPUT_ICONS.cross, props }) {
+export function BaseInput({ type, title, placeholder, value, error = '', onChange, required, setValue, icon = INPUT_ICONS.cross, maxLength, props }) {
   const inputRef = useRef(null)
   const [inputType, setInputType] = useState(type)
 
@@ -36,6 +36,7 @@ export function BaseInput({ type, title, placeholder, value, error = '', onChang
         onChange={onChange}
         ref={inputRef}
         required={required}
+        maxLength={maxLength}
         {...props}
       />
 

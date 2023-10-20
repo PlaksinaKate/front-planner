@@ -16,11 +16,13 @@ export function MainPage() {
   const [openedEvent, setOpenedEvent] = useState(0)
   const [meId, setMeId] = useState(0)
   const [isJoinEventPopupOpened, setIsJoinEventPopupOpened] = useState(false)
+  const [isCreateEventSuccessPopupOpened, setIsCreateEventSuccessPopupOpened] = useState(false)
+
   const [isLeaveEventPopupOpened, setIsLeaveEventPopupOpened] = useState(false)
-  const [isCreateEventPopupOpened, setIsCreateEventPopupOpened] = useState(true)
+  const [isCreateEventPopupOpened, setIsCreateEventPopupOpened] = useState(false)
 
   function setToken(token) {
-    localStorage.setItem('token', token)
+    sessionStorage.setItem('token', token)
     setIsAuthorization(true)
   }
 
@@ -42,6 +44,7 @@ export function MainPage() {
         openedEvent={openedEvent}
         isJoinEventPopupOpened={isJoinEventPopupOpened}
         isLeaveEventPopupOpened={isLeaveEventPopupOpened}
+        isCreateEventPopupOpened={isCreateEventPopupOpened}
       />
       <Authentication
         email={email}
@@ -98,6 +101,9 @@ export function MainPage() {
         isAuthorization={isAuthorization}
         setIsCreateEventPopupOpened={setIsCreateEventPopupOpened}
         isCreateEventPopupOpened={isCreateEventPopupOpened}
+        setIsOpenErrorPopup={setIsOpenErrorPopup}
+        setIsCreateEventSuccessPopupOpened={setIsCreateEventSuccessPopupOpened}
+        isCreateEventSuccessPopupOpened={isCreateEventSuccessPopupOpened}
       />
     </>
   );

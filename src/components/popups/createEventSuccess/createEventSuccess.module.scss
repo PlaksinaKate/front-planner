@@ -1,0 +1,57 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  height: 100%;
+
+  img {
+    height: 100%;
+  }
+}
+
+.contentWr {
+  z-index: 1;
+  position: relative;
+  width: 30vw;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.0225rem;
+  margin-bottom: 4px;
+
+  &.red {
+    color: $red;
+  }
+}
+
+.dateWr {
+  margin-top: 68px;
+}
+
+.date:not(.date:last-child) {
+  padding-right: 16px;
+  margin-right: 16px;
+  border-right: .0625rem solid $gray;
+}
+
+.location {
+  font-family: $ff2;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.025rem;
+  margin-top: 8px;
+}
+
+.btnWr {
+  margin-top: 40px;
+  max-width: 147px;
+  width: 100%;
+}

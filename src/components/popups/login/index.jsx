@@ -5,6 +5,7 @@ import { BaseInput } from "../../ui-kit/input";
 import { Button } from '../../ui-kit/button'
 import { useState, useEffect } from "react";
 import { loginUser } from "../../../api";
+import styles from './login.module.scss'
 
 export function Login({ setMeId, isOpenPopupLogin, setIsOpenPopupLogin, email, setEmail, setIsOpenErrorPopup, setToken }) {
   const [pass, setPass] = useState('')
@@ -55,17 +56,19 @@ export function Login({ setMeId, isOpenPopupLogin, setIsOpenPopupLogin, email, s
       setIsOpenPopup={setIsOpenPopupLogin}
     >
       <Title>Вход</Title>
-      <BaseInput
-        type="password"
-        title={['Пароль', <span className='red'>*</span>]}
-        placeholder={'Введите пароль'}
-        value={pass}
-        onChange={handlePassChange}
-        error={error}
-        required={true}
-        setValue={setPass}
-        icon={INPUT_ICONS.password}
-      />
+      <div className={styles.wr}>
+        <BaseInput
+          type="password"
+          title={['Пароль', <span className='red'>*</span>]}
+          placeholder={'Введите пароль'}
+          value={pass}
+          onChange={handlePassChange}
+          error={error}
+          required={true}
+          setValue={setPass}
+          icon={INPUT_ICONS.password}
+        />
+      </div>
       <Button onClick={handleBtnClick}>Далее</Button>
     </PopupWrapper>
   );

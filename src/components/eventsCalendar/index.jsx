@@ -7,7 +7,7 @@ import { getPublicEvents } from '../../api';
 import { Event } from '../ui-kit/event';
 import { FUTURE_EVENT, PAST_EVENT, ACCEDE_EVENT, CREATED_EVENT } from '../../const';
 
-export function EventsCalendar({ meId, calendar, setCalendarActiveMonth, setIsOpenEventPopup, setOpenedEvent, isLeaveEventPopupOpened, isJoinEventPopupOpened }) {
+export function EventsCalendar({ meId, calendar, setCalendarActiveMonth, setIsOpenEventPopup, setOpenedEvent, isLeaveEventPopupOpened, isJoinEventPopupOpened, isCreateEventPopupOpened }) {
   const [events, setEvents] = useState([])
 
   const fetchPublicEvents = async () => {
@@ -35,12 +35,11 @@ export function EventsCalendar({ meId, calendar, setCalendarActiveMonth, setIsOp
     if (!isJoinEventPopupOpened && !isLeaveEventPopupOpened) {
       fetchPublicEvents()
     }
-  }, [isJoinEventPopupOpened, isLeaveEventPopupOpened])
+  }, [isJoinEventPopupOpened, isLeaveEventPopupOpened, isCreateEventPopupOpened])
 
   const onClickEvent = (eventInfo) => {
     const eventId = eventInfo.event.id
     const clickedEvent = events.filter((item) => item.id == eventId)
-    console.log(clickedEvent[0])
     setOpenedEvent(clickedEvent[0])
     setIsOpenEventPopup(true)
   }

@@ -1,28 +1,28 @@
 import { PopupWrapper } from "../../ui-kit/popupWrapper";
-import styles from './joinEventSuccess.module.scss'
-import rock from '/rock.png'
+import styles from './createEventSuccess.module.scss'
+import unicorn from '/unicorn.png'
 import { ERROR_POPUP } from "../../../const";
 import { Title } from "../../ui-kit/title";
 import { Button } from "../../ui-kit/button";
 import clsx from "clsx";
 
-export function JoinEventSuccess({ title, location, getDate, isJoinEventPopupOpened, setIsJoinEventPopupOpened }) {  
+export function CreateEventSuccess({ title, location, getDate, isOpenPopup, setIsOpenPopup }) {  
   const handleBtnClick = () => {
-    setIsJoinEventPopupOpened(false)
+    setIsOpenPopup(false)
   }
 
   return (
     <PopupWrapper
       state={ERROR_POPUP}
-      isOpenPopup={isJoinEventPopupOpened}
-      setIsOpenPopup={setIsJoinEventPopupOpened}
+      isOpenPopup={isOpenPopup}
+      setIsOpenPopup={setIsOpenPopup}
     >
       <div className={styles.img}>
-        <img src={rock} alt="" />
+        <img src={unicorn} alt="" />
       </div>
       <div className={styles.contentWr}>
-        <Title textLeft marginSmall big>Поздравляем!</Title>
-        <div className={styles.text}>Вы теперь участник события:</div>
+        <Title textLeft marginSmall big>Ура!</Title>
+        <div className={styles.text}>Вы добавили новое событие:</div>
         <div className={clsx(styles.text, styles.red)}>{title}</div>
         <div className={clsx(styles.dateWr, 'row')}>
           <div className={styles.date}>{getDate().day}</div>

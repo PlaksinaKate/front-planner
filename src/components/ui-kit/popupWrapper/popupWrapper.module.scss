@@ -56,3 +56,12 @@
   right: 40px;
   z-index: 2;
 }
+
+@include media('tl') {
+  .popup {
+    padding: 72px 20px !important;
+    margin: 20px 20px;
+    overflow-y: scroll;
+    height: 100%;
+  }
+}

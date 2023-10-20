@@ -1,7 +1,7 @@
 import styles from './textarea.module.scss'
 import clsx from 'clsx';
 
-export function Textarea({ title, placeholder, name, cols, rows, setValue, value, error }) {
+export function Textarea({ title, placeholder, name, cols, rows, setValue, value, error, maxLength }) {
 
   const handleTexteareaChange = (e) => setValue(e.target.value)
 
@@ -21,6 +21,7 @@ export function Textarea({ title, placeholder, name, cols, rows, setValue, value
         cols={cols}
         rows={rows}
         onChange={handleTexteareaChange}
+        maxLength={maxLength}
       />
       <div className={clsx(styles.title, { [styles.visible]: value !== '' })}>{title}</div>
 

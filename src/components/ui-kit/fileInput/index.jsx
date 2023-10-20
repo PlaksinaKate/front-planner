@@ -2,13 +2,18 @@ import styles from './fileInput.module.scss'
 import { useState, useRef } from 'react';
 import clsx from 'clsx';
 
-export function FileInput({ value, setValue }) {
+export function FileInput({ setValue, setErrorImg, errorImg }) {
   const [previewUrl, setPreviewUrl] = useState("");
   const fileInput = useRef(null);
 
   const handleFile = (file) => {
-    setValue((value) => [...value, file]);
-    setPreviewUrl((previewUrl) => [...previewUrl, URL.createObjectURL(file)]);
+    if(file?.size / 1000000 < 5) {
+      setErrorImg('')
+      setValue((value) => [...value, file.name]);
+      setPreviewUrl((previewUrl) => [...previewUrl, URL.createObjectURL(file)]);
+    } else {
+      setErrorImg('Большой размер файла')
+    }
   }
 
   const handleDragOver = (e) => {
@@ -26,6 +31,7 @@ export function FileInput({ value, setValue }) {
     const url = e.target.children[0].src
     const newPreviewUrls = previewUrl.filter((item) => item !== url)
     setPreviewUrl(newPreviewUrls)
+    setValue(newPreviewUrls);
   }
 
   const preview = previewUrl && previewUrl.map((item, index) => {
@@ -50,6 +56,7 @@ export function FileInput({ value, setValue }) {
           onChange={e => handleFile(e.target.files[0])}
         />
         <span className={styles.text}>Выберите фото или перетащите сюда</span>
+        <div className={styles.error}>{errorImg}</div>
       </div>
       <div className={clsx(styles.imgs, 'row')}>
         {preview}

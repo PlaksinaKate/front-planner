@@ -167,3 +167,9 @@ h5,
     object-fit: cover;
   }
 }
+
+@include media('ml') {
+  .fc-view-harness  {
+    height: 82vh !important;
+  }
+}

@@ -70,3 +70,9 @@
     color: $red;
   }
 }
+
+@include media('ml') {
+  .eventWr {
+    padding: 0;
+  }
+}

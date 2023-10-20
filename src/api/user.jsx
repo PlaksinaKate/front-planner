@@ -56,7 +56,7 @@ export async function registerUser(username, email, pass) {
 
 export async function getMe() {
   try {
-    const token = localStorage.getItem('token')
+    const token = sessionStorage.getItem('token')
     const response = await fetch(`${DEV_BACKEND_URL_API}/users/me`,
       {
         headers: {
@@ -73,7 +73,7 @@ export async function getMe() {
 
 export async function getUsers() {
   try {
-    const token = localStorage.getItem('token')
+    const token = sessionStorage.getItem('token')
     const response = await fetch(`${DEV_BACKEND_URL_API}/users`,
       {
         headers: {

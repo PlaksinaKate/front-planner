@@ -19,12 +19,17 @@
   opacity: 0;
   visibility: hidden;
   overflow-x: hidden;
-  transition: all $as $ae;
+  transition: all $as*0.5 $ae;
 
   &.visible {
     opacity: 1;
     visibility: visible;
   }
+}
+
+.input:active+.resultes {
+  opacity: 1;
+  visibility: visible;
 }
 
 .result {

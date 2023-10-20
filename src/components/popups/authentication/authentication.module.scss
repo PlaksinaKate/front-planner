@@ -1,0 +1,12 @@
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
+
+.wr {
+  width: 21.625rem;
+}
+
+@include media('ml') {
+  .wr {
+    width: 100%;
+  }
+}

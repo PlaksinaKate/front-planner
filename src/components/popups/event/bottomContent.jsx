@@ -3,7 +3,7 @@ import { joinEvent } from '../../../api';
 import styles from './event.module.scss'
 
 
-export function BottomContent({ meId, id, participants, isPastEvent, isAuthorization, setIsOpenEventPopup, setIsOpenPopupAuth, setIsJoinEventPopupOpened, setIsLeaveEventPopupOpened, isLeaveEventPopupOpened }) {
+export function BottomContent({ meId, id, owner, participants, isPastEvent, isAuthorization, setIsOpenEventPopup, setIsOpenPopupAuth, setIsJoinEventPopupOpened, setIsLeaveEventPopupOpened, isLeaveEventPopupOpened }) {
 
   const handleOpenAuthPopup = () => {
     setIsOpenEventPopup(false)
@@ -44,7 +44,7 @@ export function BottomContent({ meId, id, participants, isPastEvent, isAuthoriza
 
   return (
     <div className={styles.bottom}>
-      {!isPastEvent() && bottomContent()}
+      {(!isPastEvent() && owner?.id !== meId) && bottomContent()}
     </div>
   );
 }
