@@ -7,7 +7,7 @@ import { CreateEventSuccess } from "../createEventSuccess";
 import { getDate } from "../../../helpers";
 import { INPUT_ICONS } from "../../../const";
 
-export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCreateEventPopupOpened, setIsOpenErrorPopup, isCreateEventSuccessPopupOpened, setIsCreateEventSuccessPopupOpened}) {
+export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCreateEventPopupOpened, setIsOpenErrorPopup, isCreateEventSuccessPopupOpened, setIsCreateEventSuccessPopupOpened }) {
   const [eventName, setEventName] = useState('')
   const [eventDesc, setEventDesc] = useState('')
   const [participant, setParticipant] = useState([])
@@ -21,6 +21,18 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
   const [errorStartDate, setErrorStartDate] = useState('')
   const [errorEndDate, setErrorEndDate] = useState('')
   const [errorTime, setErrorTime] = useState('')
+
+  const closePopup = () => {
+    setEventName('')
+    setEventDesc('')
+    setParticipant([])
+    setImg([])
+    setErrorImg('')
+    setDateStart('')
+    setDateEnd('')
+    setTime('')
+    setLocation('')
+  }
 
   const validatorDate = (date, setError) => {
     const aTmp = date.split(".");
@@ -111,9 +123,11 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
     if (data !== null) {
       fetchUploadFile()
       fetchCreateEventPhotos(data.id)
+      setIsCreateEventPopupOpened(false)
     } else {
       setIsCreateEventPopupOpened(false)
       setIsOpenErrorPopup(true)
+      closePopup()
     }
   }
 
@@ -258,6 +272,7 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
       <CreateEventSuccess
         title={eventName}
         location={location}
+        closePopup={closePopup}
         getDate={() => getDate(getStart())}
         isOpenPopup={isCreateEventSuccessPopupOpened}
         setIsOpenPopup={setIsCreateEventSuccessPopupOpened}
