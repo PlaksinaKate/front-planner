@@ -10,10 +10,10 @@
 
 ## [Swagger](https://planner.rdclr.ru/documentation/v1.0.0)
 
-## Installation
+## Get Started
 
 1. npm i
-2. vite dev
+2. npm run dev
 
 
 
