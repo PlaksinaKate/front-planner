@@ -2,11 +2,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Arrow } from '../../ui-kit/icons';
+import { Arrow, Title } from '../../ui-kit';
 import clsx from 'clsx';
 import { useState, useEffect } from 'react';
 import styles from './event.module.scss';
-import { Title } from '../../ui-kit/title';
 import { DEV_BACKEND_URL } from '../../../helpers/const';
 
 export function Gallery({ photos }) {

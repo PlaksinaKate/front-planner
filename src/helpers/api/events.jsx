@@ -20,14 +20,10 @@ export async function getEventById(id) {
   }
 }
 
-export async function getUploadFile(file) {
+export async function getUploadFile(img) {
   try {
     const bodyData = {
-      path: event.title,
-      refId: event.description,
-      ref: event.dateStart,
-      field: event.location,
-      files: event.participants
+      files: img
     }
 
     const token = sessionStorage.getItem('token')

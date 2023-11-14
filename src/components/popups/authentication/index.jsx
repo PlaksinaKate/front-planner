@@ -1,4 +1,4 @@
-import { PopupWrapper } from "../../ui-kit/popupWrapper";
+import { PopupWrapper } from "../../ui-kit";
 import { AUTHORIZTION_POPUP, INPUT_ERROR } from "../../../helpers/const";
 import { Title } from "../../ui-kit/title";
 import { BaseInput } from "../../ui-kit/input";

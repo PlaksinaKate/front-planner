@@ -9,7 +9,7 @@ export function FileInput({ setValue, setErrorImg, errorImg }) {
   const handleFile = (file) => {
     if(file?.size / 1000000 < 5) {
       setErrorImg('')
-      setValue((value) => [...value, file.name]);
+      setValue((value) => [...value, file]);
       setPreviewUrl((previewUrl) => [...previewUrl, URL.createObjectURL(file)]);
     } else {
       setErrorImg('Большой размер файла')

@@ -1,8 +1,5 @@
-import { PopupWrapper } from "../../ui-kit/popupWrapper";
 import { AUTHORIZTION_POPUP, INPUT_ERROR, INPUT_ICONS } from "../../../helpers/const";
-import { Title } from "../../ui-kit/title";
-import { BaseInput } from "../../ui-kit/input";
-import { Button } from '../../ui-kit/button'
+import { PopupWrapper, Title, BaseInput, Button } from "../../ui-kit";
 import { useState, useEffect } from "react";
 import { loginUser } from "../../../helpers/api";
 import styles from './login.module.scss'
