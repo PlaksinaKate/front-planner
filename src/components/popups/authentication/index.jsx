@@ -4,7 +4,7 @@ import { Title } from "../../ui-kit/title";
 import { BaseInput } from "../../ui-kit/input";
 import { Button } from '../../ui-kit/button'
 import { useEffect, useState } from "react";
-import { isUserExist } from "../../../helpers/api";
+import { api } from "../../../helpers/api";
 import styles from './authentication.module.scss'
 
 export function Authentication({ isOpenPopupAuth, setIsOpenPopupAuth, setOpenRegistation, setIsOpenPopupLogin, setEmail, email, setIsOpenErrorPopup }) {
@@ -14,7 +14,7 @@ export function Authentication({ isOpenPopupAuth, setIsOpenPopupAuth, setOpenReg
   const handleEmailChange = (e) => setEmail(e.target.value)
 
   const fetchUserExist = async () => {
-    const response = await isUserExist(email)
+    const response = await api.user.isUserExist(email)
     if (response.ok) {
       setStage(2)
     } else {

@@ -1,5 +1,5 @@
 import { Button } from '../../ui-kit';
-import { joinEvent } from '../../../helpers/api';
+import { api } from '../../../helpers/api';
 import styles from './event.module.scss'
 
 
@@ -33,7 +33,7 @@ export function BottomContent({ meId, id, owner, participants, isPastEvent, isAu
   }
 
   const fetchJoinEvent = async () => {
-    const data = await joinEvent(id)
+    const data = await api.events.joinEvent(id)
     if (data !== null) {
       setIsOpenEventPopup(false)
       setIsJoinEventPopupOpened(true)

@@ -3,7 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import './eventsCalendar.scss';
 import ruLocale from '@fullcalendar/core/locales/ru';
 import { useEffect, useState } from 'react';
-import { getPublicEvents } from '../../helpers/api';
+import { api } from '../../helpers/api';
 import { Event } from '../ui-kit/event';
 import { FUTURE_EVENT, PAST_EVENT, ACCEDE_EVENT, CREATED_EVENT } from '../../helpers/const';
 
@@ -11,7 +11,7 @@ export function EventsCalendar({ meId, calendar, setCalendarActiveMonth, setIsOp
   const [events, setEvents] = useState([])
 
   const fetchPublicEvents = async () => {
-    const data = await getPublicEvents()
+    const data = await api.events.getPublicEvents()
     const addNewData = []
     data.data.map(event => {
       const newEvent = {

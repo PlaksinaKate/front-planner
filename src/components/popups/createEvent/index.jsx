@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import clsx from "clsx";
 import styles from './createEvent.module.scss'
 import { Participant } from "../../ui-kit/participant";
-import { getMe, createEvent, createEventPhotos, getUploadFile } from "../../../helpers/api";
+import { api } from "../../../helpers/api";
 import { Button } from "../../ui-kit/button";
 import { Textarea } from "../../ui-kit/textarea";
 import { SearchInput } from "../../ui-kit/searchInput";
@@ -96,7 +96,7 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
   const handleLocationChange = (e) => { setLocation(e.target.value) }
 
   const fetchGetMe = async () => {
-    const data = await getMe()
+    const data = await api.user.getMe()
     if (data !== null) {
       setOrganizer(data)
     }
@@ -125,7 +125,7 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
       participants: participant
     }
 
-    const data = await createEvent(event)
+    const data = await api.events.createEvent(event)
     if (data !== null) {
       fetchUploadFile()
       fetchCreateEventPhotos(data.id)
@@ -148,7 +148,7 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
       photos: img
     }
 
-    const data = await createEventPhotos(eventId, event)
+    const data = await api.events.createEventPhotos(eventId, event)
     if (data !== null) {
       setIsCreateEventPopupOpened(false)
       setIsCreateEventSuccessPopupOpened(true)

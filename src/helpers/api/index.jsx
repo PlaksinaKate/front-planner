@@ -1,4 +1,4 @@
-import { getPublicEvents, getEventById, getUploadFileById, joinEvent, leaveEvent, createEvent, createEventPhotos, getUploadFile } from './events';
-import { isUserExist, loginUser, registerUser, getMe } from './user'
+import {user} from './user'
+import {events} from './events'
 
-export { getPublicEvents, getEventById, isUserExist, loginUser, registerUser, getUploadFileById, joinEvent, getMe, leaveEvent, createEvent, createEventPhotos, getUploadFile }
+export const api = {user, events}

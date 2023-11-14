@@ -1,7 +1,7 @@
 import { AUTHORIZTION_POPUP, INPUT_ERROR, INPUT_ICONS } from "../../../helpers/const";
 import { PopupWrapper, Title, BaseInput, Button } from "../../ui-kit";
 import { useState, useEffect } from "react";
-import { loginUser } from "../../../helpers/api";
+import { api } from "../../../helpers/api";
 import styles from './login.module.scss'
 
 export function Login({ setMeId, isOpenPopupLogin, setIsOpenPopupLogin, email, setEmail, setIsOpenErrorPopup, setToken }) {
@@ -16,7 +16,7 @@ export function Login({ setMeId, isOpenPopupLogin, setIsOpenPopupLogin, email, s
   }
 
   const fetchLoginUser = async () => {
-    const response = await loginUser(email, pass)
+    const response = await api.user.loginUser(email, pass)
     if (response.ok) {
       const data = await response.json()
       setToken(data.jwt)

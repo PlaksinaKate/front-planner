@@ -1,16 +1,15 @@
 import { PopupWrapper, Title, Button } from "../../ui-kit";
 import styles from './leaveEvent.module.scss'
-import rock from '/rock.png'
 import { REGISTRATION_POPUP } from "../../../helpers/const";
 import clsx from "clsx";
-import { leaveEvent } from "../../../helpers/api";
+import { api } from "../../../helpers/api";
 
 export function LeaveEvent({ event, setIsLeaveEventPopupOpened, isLeaveEventPopupOpened, setIsOpenEventPopup }) {
   const handleBtnNoClick = () => setIsLeaveEventPopupOpened(false)
   const handleBtnYesClick = () => fetchLeaveEvent()
 
   const fetchLeaveEvent = async () => {
-    const data = await leaveEvent(event.id)
+    const data = await api.events.leaveEvent(event.id)
     if (data !== null) {
       setIsLeaveEventPopupOpened(false)
       setIsOpenEventPopup(false)

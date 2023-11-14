@@ -1,6 +1,6 @@
-import { DEV_BACKEND_URL_API } from '../helpers/const'
+import { DEV_BACKEND_URL_API } from '../const'
 
-export async function isUserExist(email) {
+async function isUserExist(email) {
   try {
     const response = await fetch(`${DEV_BACKEND_URL_API}/taken-emails/${email}`);
     return response;
@@ -9,7 +9,7 @@ export async function isUserExist(email) {
   }
 }
 
-export async function loginUser(email, pass) {
+async function loginUser(email, pass) {
   try {
     const data = {
       identifier: email,
@@ -31,7 +31,7 @@ export async function loginUser(email, pass) {
   }
 }
 
-export async function registerUser(username, email, pass) {
+async function registerUser(username, email, pass) {
   try {
     const bodyData = {
       username: username,
@@ -54,7 +54,7 @@ export async function registerUser(username, email, pass) {
   }
 }
 
-export async function getMe() {
+async function getMe() {
   try {
     const token = sessionStorage.getItem('token')
     const response = await fetch(`${DEV_BACKEND_URL_API}/users/me`,
@@ -71,7 +71,7 @@ export async function getMe() {
   }
 }
 
-export async function getUsers() {
+async function getUsers() {
   try {
     const token = sessionStorage.getItem('token')
     const response = await fetch(`${DEV_BACKEND_URL_API}/users`,
@@ -86,4 +86,12 @@ export async function getUsers() {
     } catch (error) {
     throw new Error(error)
   }
+}
+
+export const user={
+  isUserExist,
+  loginUser,
+  registerUser,
+  getMe,
+  getUsers,
 }

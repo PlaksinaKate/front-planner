@@ -2,7 +2,7 @@ import { REGISTRATION_POPUP, INPUT_ICONS, INPUT_ERROR } from "../../../helpers/c
 import { PopupWrapper, Title, Info, BaseInput, Button } from "../../ui-kit";
 import { useEffect, useState } from "react";
 import styles from './registration.module.scss'
-import { registerUser } from "../../../helpers/api";
+import { api } from "../../../helpers/api";
 
 export function Registration({ email, setEmail, setOpenRegistation, openRegistation, setIsOpenErrorPopup, setToken }) {
   const [userName, setUserName] = useState('')
@@ -41,7 +41,7 @@ export function Registration({ email, setEmail, setOpenRegistation, openRegistat
   }
 
   const fetchRegisterUser = async () => {
-    const response = await registerUser(userName, email, password)
+    const response = await api.user.registerUser(userName, email, password)
     if (response.ok) {
       const data = await response.json()
       setToken(data.jwt)
