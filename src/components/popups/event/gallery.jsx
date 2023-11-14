@@ -40,7 +40,7 @@ export function Gallery({ photos }) {
   return (
     <div className={styles.gallery}>
       <div className={clsx(styles.galleryHeaderWr, 'row', 'space-between', 'center')}>
-        <Title small textLeft marginNone>Галерея</Title>
+        <Title size="small" textLeft>Галерея</Title>
         <div className={styles.navigations}>
           <span id="swiper-back" className={styles.navigation} onClick={handleSwiperPrev}>
             <Arrow width={64} height={48} weight={4} fill disabled={isDisabledBtnPrev} />

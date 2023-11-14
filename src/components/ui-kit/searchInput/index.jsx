@@ -8,9 +8,9 @@ import defaultImg from '/default.jpg'
 
 
 export function SearchInput({ isAuthorization, title, placeholder, value, setValue, required, organaizerId, error }) {
-  const [users, setUsers] = useState([])
-  const [searchRes, setSearchRes] = useState([])
-  const [inputValue, setInputValue] = useState('')
+  const [users, setUsers] = useState(null)
+  const [searchRes, setSearchRes] = useState(null)
+  const [inputValue, setInputValue] = useState(null)
   const inputRef = useRef(null)
 
   const handleCrossClick = () => {
@@ -24,7 +24,9 @@ export function SearchInput({ isAuthorization, title, placeholder, value, setVal
     const inputValue = e.target.value
     setInputValue(inputValue)
     const searchResult = users?.filter((item) => item.username.includes(inputValue) && item.id !== organaizerId)
-    inputValue !== '' && setSearchRes(searchResult)
+    if (inputValue !== '') { 
+      setSearchRes(searchResult) 
+    }
   }
 
   const handleAddParticipant = (username) => {
@@ -58,8 +60,8 @@ export function SearchInput({ isAuthorization, title, placeholder, value, setVal
         )}>
           <div className="row no-wrap center">
             <div className={styles.participants}>
-              {value?.map((item) => {
-                return <div className={clsx(styles.participant, 'row', 'center')}>
+              {value?.map((item, index) => {
+                return <div key={index} className={clsx(styles.participant, 'row', 'center')}>
                   <div className={styles.img}>
                     <img src={defaultImg} alt="" />
                   </div>
@@ -82,7 +84,7 @@ export function SearchInput({ isAuthorization, title, placeholder, value, setVal
               ref={inputRef}
               required={required}
             />
-            <div className={clsx(styles.title, { [styles.visible]: value.length !== 0 || inputValue !== '' })}>{title}</div>
+            <div className={clsx(styles.title, { [styles.visible]: value.length || inputValue })}>{title}</div>
           </div>
         </div>
 
@@ -92,7 +94,7 @@ export function SearchInput({ isAuthorization, title, placeholder, value, setVal
 
         <div className={styles.errorText}>{error}</div>
       </div>
-      <div className={clsx(styles.resultes, { [styles.visible]: searchRes.length !== 0 })}>
+      <div className={clsx(styles.resultes, { [styles.visible]: searchRes })}>
         {searchRes?.map((res) => {
           return <div key={res.id} className={styles.result} onClick={() => handleAddParticipant(res.username)} data-user={res.id}>
             <Participant name={res.username} />

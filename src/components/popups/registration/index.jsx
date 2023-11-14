@@ -79,7 +79,7 @@ export function Registration({ email, setEmail, setOpenRegistation, openRegistat
       isOpenPopup={openRegistation}
       setIsOpenPopup={setOpenRegistation}
     >
-      <Title marignLittle>Регистрация</Title>
+      <Title margin="little">Регистрация</Title>
       <Info>
         {'В пароле используйте от 8 до 32 символов: строчные и прописные латинские буквы (A-z), цифры (0-9) и спец символы ( . , : ; ? ! * + % - < > @ [ ] { } / \ _ {} $ # )'}
       </Info>

@@ -1,13 +1,15 @@
 import styles from './textarea.module.scss'
 import clsx from 'clsx';
+import { useId } from 'react';
 
 export function Textarea({ title, placeholder, name, cols, rows, setValue, value, error, maxLength }) {
-
+  const id = useId()
   const handleTexteareaChange = (e) => setValue(e.target.value)
 
   return (
     <div className={styles.wr}>
       <textarea
+      id={id}
         className={clsx(
           styles.textarea,
           {
@@ -23,9 +25,9 @@ export function Textarea({ title, placeholder, name, cols, rows, setValue, value
         onChange={handleTexteareaChange}
         maxLength={maxLength}
       />
-      <div className={clsx(styles.title, { [styles.visible]: value !== '' })}>{title}</div>
+      <label htmlFor={id} className={clsx(styles.title, { [styles.visible]: value !== '' })}>{title}</label>
 
-      <div className={styles.errorText}>{error}</div>
+      <p className={styles.errorText}>{error}</p>
     </div>
   );
 }

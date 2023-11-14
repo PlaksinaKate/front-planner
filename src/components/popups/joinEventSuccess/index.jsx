@@ -8,6 +8,7 @@ export function JoinEventSuccess({ title, location, getDate, isJoinEventPopupOpe
   const handleBtnClick = () => {
     setIsJoinEventPopupOpened(false)
   }
+  const {day, date, time} = getDate();
 
   return (
     <PopupWrapper
@@ -19,13 +20,13 @@ export function JoinEventSuccess({ title, location, getDate, isJoinEventPopupOpe
         <img src={rock} alt="" />
       </div>
       <div className={styles.contentWr}>
-        <Title textLeft marginSmall big>Поздравляем!</Title>
+        <Title textLeft margin="small" size="big">Поздравляем!</Title>
         <div className={styles.text}>Вы теперь участник события:</div>
         <div className={clsx(styles.text, styles.red)}>{title}</div>
         <div className={clsx(styles.dateWr, 'row')}>
-          <div className={styles.date}>{getDate().day}</div>
-          <div className={styles.date}>{getDate().date}</div>
-          <div className={styles.date}>{getDate().time}</div>
+          <div className={styles.date}>{day}</div>
+          <div className={styles.date}>{date}</div>
+          <div className={styles.date}>{time}</div>
         </div>
         <div className={styles.location}>{location}</div>
         <div className={styles.btnWr}>

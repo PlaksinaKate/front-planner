@@ -174,12 +174,12 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
         isOpenPopup={isCreateEventPopupOpened}
         setIsOpenPopup={setIsCreateEventPopupOpened}
       >
-        <Title marginBig>Создание события</Title>
+        <Title margin="big">Создание события</Title>
         <div className={clsx(styles.inputs, 'row', 'space-between')}>
           <div className={styles.leftContent}>
             <BaseInput
               type="text"
-              title={['Название', <span className='red'>*</span>]}
+              title={<>Название <span className='red'>*</span></>}
               placeholder='Введите название'
               value={eventName}
               onChange={handleEventNameChange}
@@ -188,7 +188,7 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
               maxLength={140}
             />
             <Textarea
-              title={['Описание', <span className='red'>*</span>]}
+              title={<>Описание <span className='red'>*</span></>}
               placeholder='Введите описание'
               value={eventDesc}
               required={true}
@@ -213,7 +213,7 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
               <BaseInput
                 type="text"
                 placeholder='ДД.ММ.ГГГГ'
-                title={['Начало', <span className='red'>*</span>]}
+                title={<>Начало <span className='red'>*</span></>}
                 value={dateStart}
                 onChange={handleDateStartChange}
                 error={errorStartDate}
@@ -224,7 +224,7 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
               <BaseInput
                 type="text"
                 placeholder='ДД.ММ.ГГГГ'
-                title={['Конец', <span className='red'>*</span>]}
+                title={<>Конец <span className='red'>*</span></>}
                 value={dateEnd}
                 onChange={handleDateEndChange}
                 error={errorEndDate}
@@ -236,7 +236,7 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
             <BaseInput
               type="text"
               placeholder='00:00'
-              title={['Время', <span className='red'>*</span>]}
+              title={<>Время <span className='red'>*</span></>}
               value={time}
               error={errorTime}
               onChange={handleTimeChange}
@@ -247,7 +247,7 @@ export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCr
             <BaseInput
               type="text"
               placeholder='Введите место проведения'
-              title={['Место проведения', <span className='red'>*</span>]}
+              title={<>Место проведения <span className='red'>*</span></>}
               value={location}
               onChange={handleLocationChange}
               required={true}

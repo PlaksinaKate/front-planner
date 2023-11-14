@@ -25,7 +25,7 @@ export function ParticipantsList({ owner, participants }) {
 
   return (
     <div className={styles.participants}>
-      <Title small textLeft>Участники</Title>
+      <Title size="small" textLeft>Участники</Title>
       <div className={clsx(styles.participantsList, 'row')}>
         {ownerUi}
         {participantsList}

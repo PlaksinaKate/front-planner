@@ -24,6 +24,8 @@ export function EventPopup({ meId, isOpenEventPopup, setIsOpenEventPopup, isAuth
     return start < nowDate
   }
 
+  const {day, date, time} = getDate(start);
+
   return (
     <>
       <PopupWrapper
@@ -31,14 +33,14 @@ export function EventPopup({ meId, isOpenEventPopup, setIsOpenEventPopup, isAuth
         setIsOpenPopup={setIsOpenEventPopup}
       >
         <div className={styles.wr}>
-          <Title marignLittle={isPastEvent()}>{title}</Title>
+          <Title marign={isPastEvent() && 'little'}>{title}</Title>
           {pastEvent()}
           <div className={clsx('row', 'space-between', styles.descWr)}>
             <div className={styles.datePlace}>
               <div className={styles.dates}>
-                <div className={styles.date}>{getDate(start).day}</div>
-                <div className={styles.date}>{getDate(start).date}</div>
-                <div className={styles.date}>{getDate(start).time}</div>
+                <div className={styles.date}>{day}</div>
+                <div className={styles.date}>{date}</div>
+                <div className={styles.date}>{time}</div>
               </div>
               <div className={styles.place}>{location}</div>
             </div>

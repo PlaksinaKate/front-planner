@@ -42,11 +42,10 @@ export function FileInput({ setValue, setErrorImg, errorImg }) {
 
   return (
     <div className={clsx(styles.wr, 'row', 'no-wrap', 'space-between')}>
-      <div
+      <label
         className={styles.dragNdrop}
         onDragOver={handleDragOver}
         onDrop={handleOnDrop}
-        onClick={() => fileInput.current.click()}
       >
         <input
           className={styles.input}
@@ -57,7 +56,7 @@ export function FileInput({ setValue, setErrorImg, errorImg }) {
         />
         <span className={styles.text}>Выберите фото или перетащите сюда</span>
         <div className={styles.error}>{errorImg}</div>
-      </div>
+      </label>
       <div className={clsx(styles.imgs, 'row')}>
         {preview}
       </div>

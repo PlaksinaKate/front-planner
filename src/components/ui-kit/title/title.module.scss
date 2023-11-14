@@ -11,34 +11,38 @@
   letter-spacing: -0.045rem;
   margin-bottom: 2.5rem;
 
-  &.big {
+  &.textLeft {
+    text-align: left;
+  }
+}
+
+.size {
+  &_big {
     font-size: 4rem;
     line-height: 1.20;
   }
 
-  &.small {
+  &_small {
     font-size: 1.5rem;
     line-height: 1;
     letter-spacing: -0.03rem;
   }
+}
 
-  &.marignBig {
+.margin {
+  &_big {
     margin-bottom: 4rem;
   }
 
-  &.marignSmall {
+  &_small {
     margin-bottom: 1.5rem;
   }
 
-  &.marignLittle {
+  &_little {
     margin-bottom: 1rem;
   }
 
-  &.textLeft {
-    text-align: left;
-  }
-
-  &.marginNone {
+  &_none {
     margin-bottom: 0;
   }
 }

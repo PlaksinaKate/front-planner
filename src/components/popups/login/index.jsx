@@ -56,7 +56,7 @@ export function Login({ setMeId, isOpenPopupLogin, setIsOpenPopupLogin, email, s
       <div className={styles.wr}>
         <BaseInput
           type="password"
-          title={['Пароль', <span className='red'>*</span>]}
+          title={<>Пароль <span className='red'>*</span></>}
           placeholder={'Введите пароль'}
           value={pass}
           onChange={handlePassChange}

@@ -19,7 +19,7 @@ export function Error({ isOpenErrorPopup, setIsOpenErrorPopup }) {
         <img src={curlic} alt="" />
       </div>
       <div className={styles.contentWr}>
-        <Title textLeft marginSmall big>Что-то пошло<br /> не так</Title>
+        <Title textLeft margin="small" size="big">Что-то пошло<br /> не так</Title>
         <div className={styles.text}>Попробуйте позже</div>
         <div className={styles.btnWr}>
           <Button onClick={handleBtnClick}>Хорошо</Button>

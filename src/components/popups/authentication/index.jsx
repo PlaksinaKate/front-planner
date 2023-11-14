@@ -3,7 +3,7 @@ import { AUTHORIZTION_POPUP, INPUT_ERROR } from "../../../helpers/const";
 import { Title } from "../../ui-kit/title";
 import { BaseInput } from "../../ui-kit/input";
 import { Button } from '../../ui-kit/button'
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { api } from "../../../helpers/api";
 import styles from './authentication.module.scss'
 
@@ -13,14 +13,14 @@ export function Authentication({ isOpenPopupAuth, setIsOpenPopupAuth, setOpenReg
 
   const handleEmailChange = (e) => setEmail(e.target.value)
 
-  const fetchUserExist = async () => {
+  const fetchUserExist = useCallback(async () => {
     const response = await api.user.isUserExist(email)
     if (response.ok) {
       setStage(2)
     } else {
       setStage(3)
     }
-  }
+  }, [])
 
   function validateEmail() {
     const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
@@ -70,7 +70,7 @@ export function Authentication({ isOpenPopupAuth, setIsOpenPopupAuth, setOpenReg
       <div className={styles.wr}>
         <BaseInput
           type="email"
-          title={['E-mail', <span className='red'>*</span>]}
+          title={<>E-mail <span className='red'>*</span></>}
           placeholder='Enter email'
           value={email}
           onChange={handleEmailChange}

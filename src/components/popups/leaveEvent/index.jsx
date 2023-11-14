@@ -22,7 +22,7 @@ export function LeaveEvent({ event, setIsLeaveEventPopupOpened, isLeaveEventPopu
       isOpenPopup={isLeaveEventPopupOpened}
       setIsOpenPopup={setIsLeaveEventPopupOpened}
     >
-      <Title marginBig>Вы действительно хотите<br /> отменить участие?</Title>
+      <Title margin="big">Вы действительно хотите<br /> отменить участие?</Title>
       <div className={clsx(styles.btnsWr, 'row', 'space-between')}>
         <Button border onClick={handleBtnNoClick}>Нет</Button>
         <Button onClick={handleBtnYesClick}>Да</Button>

@@ -42,20 +42,20 @@ export function BaseInput({ type, title, placeholder, value, error = '', onChang
 
       <div className={clsx(styles.title, { [styles.visible]: value !== '' })}>{title}</div>
 
-      {icon === INPUT_ICONS.cross ?
+      {icon === INPUT_ICONS.cross &&
         <div className={clsx(styles.cross, { [styles.visible]: value !== '' })} onClick={handleCrossClick}>
           <Cross small error={error !== ''} />
         </div>
-        : icon === INPUT_ICONS.password ?
-          <div className={clsx(styles.cross, { [styles.visible]: value !== '' })} onClick={handlePassClick}>
-            <Password show={inputType === 'text'} />
-          </div>
-          : icon === INPUT_ICONS.date ?
-            <div className={styles.date}>
-              <CalendarIcon />
-            </div>
-            :
-            <div></div>
+      }
+      {icon === INPUT_ICONS.password &&
+        <div className={clsx(styles.cross, { [styles.visible]: value !== '' })} onClick={handlePassClick}>
+          <Password show={inputType === 'text'} />
+        </div>
+      }
+      {icon === INPUT_ICONS.date &&
+        <div className={styles.date}>
+          <CalendarIcon />
+        </div>
       }
 
       <div className={styles.errorText}>{error}</div>

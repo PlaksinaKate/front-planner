@@ -15,6 +15,8 @@ export function CreateEventSuccess({ title, location, getDate, isOpenPopup, setI
     !isOpenPopup && closePopup()
   }, [isOpenPopup])
 
+  const {day, date, time} = getDate();
+
   return (
     <PopupWrapper
       state={ERROR_POPUP}
@@ -25,13 +27,13 @@ export function CreateEventSuccess({ title, location, getDate, isOpenPopup, setI
         <img src={unicorn} alt="" />
       </div>
       <div className={styles.contentWr}>
-        <Title textLeft marginSmall big>Ура!</Title>
+        <Title textLeft margin="small" size="big">Ура!</Title>
         <div className={styles.text}>Вы добавили новое событие:</div>
         <div className={clsx(styles.text, styles.red)}>{title}</div>
         <div className={clsx(styles.dateWr, 'row')}>
-          <div className={styles.date}>{getDate().day}</div>
-          <div className={styles.date}>{getDate().date}</div>
-          <div className={styles.date}>{getDate().time}</div>
+          <div className={styles.date}>{day}</div>
+          <div className={styles.date}>{date}</div>
+          <div className={styles.date}>{time}</div>
         </div>
         <div className={styles.location}>{location}</div>
         <div className={styles.btnWr}>
