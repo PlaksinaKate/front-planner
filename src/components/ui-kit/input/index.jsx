@@ -2,7 +2,7 @@ import styles from './input.module.scss'
 import clsx from 'clsx';
 import { Cross, Password, CalendarIcon } from '../icons';
 import { useRef, useState } from 'react';
-import { INPUT_ICONS } from '../../../const';
+import { INPUT_ICONS } from '../../../helpers/const';
 
 export function BaseInput({ type, title, placeholder, value, error = '', onChange, required, setValue, icon = INPUT_ICONS.cross, maxLength, props }) {
   const inputRef = useRef(null)

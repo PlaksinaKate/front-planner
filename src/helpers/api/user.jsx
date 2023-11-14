@@ -1,4 +1,4 @@
-import { DEV_BACKEND_URL_API } from '../const'
+import { DEV_BACKEND_URL_API } from '../helpers/const'
 
 export async function isUserExist(email) {
   try {

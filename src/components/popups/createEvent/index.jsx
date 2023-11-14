@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import clsx from "clsx";
 import styles from './createEvent.module.scss'
 import { Participant } from "../../ui-kit/participant";
-import { getMe, createEvent, createEventPhotos, getUploadFile } from "../../../api";
+import { getMe, createEvent, createEventPhotos, getUploadFile } from "../../../helpers/api";
 import { Button } from "../../ui-kit/button";
 import { Textarea } from "../../ui-kit/textarea";
 import { SearchInput } from "../../ui-kit/searchInput";
 import { FileInput } from "../../ui-kit/fileInput";
-import { INPUT_ICONS } from "../../../const";
+import { INPUT_ICONS } from ".../../../helpers/const";
 import { CreateEventSuccess } from "../createEventSuccess";
 import { getDate } from "../../../helpers";
 

@@ -1,7 +1,7 @@
 import styles from './searchInput.module.scss'
 import { Participant } from "../participant";
 import { useEffect, useState, useRef } from "react";
-import { getUsers } from "../../../api/user";
+import { getUsers } from "../../../helpers/api/user";
 import clsx from "clsx";
 import { Cross } from '../icons';
 import defaultImg from '/default.jpg'

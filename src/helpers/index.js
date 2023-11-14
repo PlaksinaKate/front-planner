@@ -1,4 +1,4 @@
-import { MONTHS, WEEKS_DAY } from '../const';
+import { MONTHS, WEEKS_DAY } from '../helpers/const';
 
 export const getDate = (start) => {
   if (start !== null) {

@@ -1,11 +1,11 @@
 import { PopupWrapper } from "../../ui-kit/popupWrapper";
 import styles from './leaveEvent.module.scss'
 import rock from '/rock.png'
-import { REGISTRATION_POPUP } from "../../../const";
+import { REGISTRATION_POPUP } from "../../../helpers/const";
 import { Title } from "../../ui-kit/title";
 import { Button } from "../../ui-kit/button";
 import clsx from "clsx";
-import { leaveEvent } from "../../../api";
+import { leaveEvent } from "../../../helpers/api";
 
 export function LeaveEvent({ event, setIsLeaveEventPopupOpened, isLeaveEventPopupOpened, setIsOpenEventPopup }) {
   const handleBtnNoClick = () => setIsLeaveEventPopupOpened(false)

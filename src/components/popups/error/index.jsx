@@ -1,7 +1,7 @@
 import { PopupWrapper } from "../../ui-kit/popupWrapper";
 import styles from './error.module.scss'
 import curlic from '/curlic.png'
-import { ERROR_POPUP } from "../../../const";
+import { ERROR_POPUP } from "../../../helpers/const";
 import { Title } from "../../ui-kit/title";
 import { Button } from "../../ui-kit/button";
 

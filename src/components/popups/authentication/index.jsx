@@ -1,10 +1,10 @@
 import { PopupWrapper } from "../../ui-kit/popupWrapper";
-import { AUTHORIZTION_POPUP, INPUT_ERROR } from "../../../const";
+import { AUTHORIZTION_POPUP, INPUT_ERROR } from "../../../helpers/const";
 import { Title } from "../../ui-kit/title";
 import { BaseInput } from "../../ui-kit/input";
 import { Button } from '../../ui-kit/button'
 import { useEffect, useState } from "react";
-import { isUserExist } from "../../../api";
+import { isUserExist } from "../../../helpers/api";
 import styles from './authentication.module.scss'
 
 export function Authentication({ isOpenPopupAuth, setIsOpenPopupAuth, setOpenRegistation, setIsOpenPopupLogin, setEmail, email, setIsOpenErrorPopup }) {

@@ -1,6 +1,6 @@
 import styles from './event.module.scss';
 import clsx from 'clsx';
-import { FUTURE_EVENT, PAST_EVENT, ACCEDE_EVENT, CREATED_EVENT } from '../../../const';
+import { FUTURE_EVENT, PAST_EVENT, ACCEDE_EVENT, CREATED_EVENT } from '../../../helpers/const';
 
 export function Event({ state = { PAST_EVENT }, children }) {
   const eventStateStyles = {

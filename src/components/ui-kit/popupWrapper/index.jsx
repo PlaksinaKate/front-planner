@@ -1,7 +1,7 @@
 import styles from './popupWrapper.module.scss'
 import { Cross } from '../icons';
 import clsx from 'clsx';
-import { AUTHORIZTION_POPUP, REGISTRATION_POPUP, ERROR_POPUP, EVENT_POPUP } from '../../../const';
+import { AUTHORIZTION_POPUP, REGISTRATION_POPUP, ERROR_POPUP, EVENT_POPUP } from '../../../helpers/const';
 
 export function PopupWrapper({ children, state = EVENT_POPUP, isOpenPopup, setIsOpenPopup }) {
   const handleCrossClick = () => {

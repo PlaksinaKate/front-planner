@@ -1,5 +1,5 @@
 import { Button } from '../../ui-kit/button';
-import { joinEvent } from '../../../api';
+import { joinEvent } from '../../../helpers/api';
 import styles from './event.module.scss'
 
 

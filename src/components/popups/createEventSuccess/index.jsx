@@ -1,7 +1,7 @@
 import { PopupWrapper } from "../../ui-kit/popupWrapper";
 import styles from './createEventSuccess.module.scss'
 import unicorn from '/unicorn.png'
-import { ERROR_POPUP } from "../../../const";
+import { ERROR_POPUP } from "../../../helpers/const";
 import { Title } from "../../ui-kit/title";
 import { Button } from "../../ui-kit/button";
 import clsx from "clsx";

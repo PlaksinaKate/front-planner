@@ -1,12 +1,12 @@
 import { PopupWrapper } from "../../ui-kit/popupWrapper";
-import { REGISTRATION_POPUP, INPUT_ICONS, INPUT_ERROR } from "../../../const";
+import { REGISTRATION_POPUP, INPUT_ICONS, INPUT_ERROR } from "../../../helpers/const";
 import { Title } from "../../ui-kit/title";
 import { useEffect, useState } from "react";
 import { Info } from "../../ui-kit/info";
 import { BaseInput } from "../../ui-kit/input";
 import { Button } from "../../ui-kit/button";
 import styles from './registration.module.scss'
-import { registerUser } from "../../../api";
+import { registerUser } from "../../../helpers/api";
 
 export function Registration({ email, setEmail, setOpenRegistation, openRegistation, setIsOpenErrorPopup, setToken }) {
   const [userName, setUserName] = useState('')

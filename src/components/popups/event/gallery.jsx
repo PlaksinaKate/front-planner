@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import { useState, useEffect } from 'react';
 import styles from './event.module.scss';
 import { Title } from '../../ui-kit/title';
-import { DEV_BACKEND_URL } from '../../../const';
+import { DEV_BACKEND_URL } from '../../../helpers/const';
 
 export function Gallery({ photos }) {
   const [swiper, setSwiper] = useState(null);

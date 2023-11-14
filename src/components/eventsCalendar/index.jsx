@@ -3,9 +3,9 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import './eventsCalendar.scss';
 import ruLocale from '@fullcalendar/core/locales/ru';
 import { useEffect, useState } from 'react';
-import { getPublicEvents } from '../../api';
+import { getPublicEvents } from '../../helpers/api';
 import { Event } from '../ui-kit/event';
-import { FUTURE_EVENT, PAST_EVENT, ACCEDE_EVENT, CREATED_EVENT } from '../../const';
+import { FUTURE_EVENT, PAST_EVENT, ACCEDE_EVENT, CREATED_EVENT } from '../../helpers/const';
 
 export function EventsCalendar({ meId, calendar, setCalendarActiveMonth, setIsOpenEventPopup, setOpenedEvent, isLeaveEventPopupOpened, isJoinEventPopupOpened, isCreateEventPopupOpened }) {
   const [events, setEvents] = useState([])
