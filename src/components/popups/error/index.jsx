@@ -2,9 +2,6 @@ import { PopupWrapper, Title, Button } from "../../ui-kit";
 import styles from './error.module.scss'
 import curlic from '/curlic.png'
 import { ERROR_POPUP } from "../../../helpers/const";
-import { Title } from "../../ui-kit/title";
-import { Button } from "../../ui-kit/button";
-
 
 export function Error({ isOpenErrorPopup, setIsOpenErrorPopup }) {
   

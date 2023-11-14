@@ -8,8 +8,8 @@ import { api } from "../../../helpers/api";
 import styles from './authentication.module.scss'
 
 export function Authentication({ isOpenPopupAuth, setIsOpenPopupAuth, setOpenRegistation, setIsOpenPopupLogin, setEmail, email, setIsOpenErrorPopup }) {
-  const [error, setError] = useState('')
-  const [stage, setStage] = useState(0)
+  const [error, setError] = useState(null)
+  const [stage, setStage] = useState(null)
 
   const handleEmailChange = (e) => setEmail(e.target.value)
 

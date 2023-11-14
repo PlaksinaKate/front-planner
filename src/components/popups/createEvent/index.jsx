@@ -2,16 +2,10 @@ import { PopupWrapper, Title, BaseInput, Participant, Button, Textarea, SearchIn
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import styles from './createEvent.module.scss'
-import { Participant } from "../../ui-kit/participant";
 import { api } from "../../../helpers/api";
-import { Button } from "../../ui-kit/button";
-import { Textarea } from "../../ui-kit/textarea";
-import { SearchInput } from "../../ui-kit/searchInput";
-import { FileInput } from "../../ui-kit/fileInput";
-import { INPUT_ICONS } from ".../../../helpers/const";
+import { INPUT_ICONS } from "../../../helpers/const";
 import { CreateEventSuccess } from "../createEventSuccess";
 import { getDate } from "../../../helpers";
-import { INPUT_ICONS } from "../../../const";
 
 export function CreateEvent({ isAuthorization, setIsCreateEventPopupOpened, isCreateEventPopupOpened, setIsOpenErrorPopup, isCreateEventSuccessPopupOpened, setIsCreateEventSuccessPopupOpened }) {
   const [eventName, setEventName] = useState('')
